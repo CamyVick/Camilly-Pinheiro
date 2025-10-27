@@ -9,12 +9,14 @@
 ---
 
 
+
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=camyvick&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=pt-br&hide_border=false&border_radius=10" height="170" alt="Estatísticas do GitHub" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=camyvick&locale=pt-br&hide_title=false&layout=compact&card_width=320&langs_count=6&theme=dracula&hide_border=false&border_radius=10" height="170" alt="Linguagens mais usadas" />
+  <img src="https://github-readme-stats.vercel.app/api?username=CamyVick&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=pt-br&hide_border=false&border_radius=10" height="170" alt="Estatísticas do GitHub" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=CamyVick&locale=pt-br&hide_title=false&layout=compact&card_width=320&langs_count=6&theme=dracula&hide_border=false&border_radius=10" height="170" alt="Linguagens mais usadas" />
 </div>
 
 ---
+
 
 
 <div align="center">
@@ -37,10 +39,10 @@
 
 
 <div align="center">
-  <a href="mailto:camilly2victoria@gmail.com" target="_blank">
+  <a href="mailto:seu-email@gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" height="35" alt="Gmail" />
   </a>
-  <a href="https://www.linkedin.com/in/camilly-pinheiro-dados" target="_blank">
+  <a href="https://www.linkedin.com/in/seu-perfil" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" height="35" alt="LinkedIn" />
   </a>
 </div>
@@ -50,10 +52,11 @@
 <div align="center">
   
 
+
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/camyvick/camyvick/output/github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/camyvick/camyvick/output/github-contribution-grid-snake.svg">
-  <img alt="Snake animation" src="https://raw.githubusercontent.com/camyvick/camyvick/output/github-contribution-grid-snake.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CamyVick/Camilly-Pinheiro/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/CamyVick/Camilly-Pinheiro/output/github-contribution-grid-snake.svg">
+  <img alt="Snake animation" src="https://raw.githubusercontent.com/CamyVick/Camilly-Pinheiro/output/github-contribution-grid-snake.svg">
 </picture>
 
 </div>
@@ -64,6 +67,6 @@
   
 ### ⚡ *"Código é poesia em movimento"*
 
-![Profile Views](https://komarev.com/ghpvc/?username=camyvick&color=blueviolet&style=flat-square)
+![Profile Views](https://komarev.com/ghpvc/?username=CamyVick&color=blueviolet&style=flat-square)
 
 </div>
