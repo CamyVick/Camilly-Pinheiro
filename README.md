@@ -7,8 +7,8 @@
 </div>
 
 ---
-
-## 📊 Estatísticas do GitHub
+<div align="center">
+## Estatísticas do GitHub
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=CamyVick&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=pt-br&hide_border=false&border_radius=10" height="170" alt="Estatísticas do GitHub" />
@@ -16,8 +16,8 @@
 </div>
 
 ---
-
-## 🛠️ Tecnologias e Ferramentas
+<div align="center">
+## Tecnologias e Ferramentas
 
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40" alt="Python" title="Python" />
@@ -36,8 +36,8 @@
 </div>
 
 ---
-
-## 📫 Contato
+<div align="center">
+## Contato
 
 <div align="center">
   <a href="mailto:seu-email@gmail.com" target="_blank">
@@ -52,7 +52,7 @@
 
 <div align="center">
   
-## 🐍 Contribuições
+## Contribuições
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CamyVick/Camilly-Pinheiro/output/github-contribution-grid-snake-dark.svg">
@@ -64,9 +64,7 @@
 
 ---
 
-<div align="center">
   
-### ⚡ *"Código é poesia em movimento"*
 
 ![Profile Views](https://komarev.com/ghpvc/?username=CamyVick&color=blueviolet&style=flat-square)
 
