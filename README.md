@@ -8,6 +8,7 @@
 
 ---
 <div align="center">
+  
 ## Estatísticas do GitHub
 
 <div align="center">
@@ -17,6 +18,7 @@
 
 ---
 <div align="center">
+  
 ## Tecnologias e Ferramentas
 
 <div align="center">
@@ -37,6 +39,7 @@
 
 ---
 <div align="center">
+  
 ## Contato
 
 <div align="center">
