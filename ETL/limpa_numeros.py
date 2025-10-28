@@ -2,10 +2,20 @@ import pandas as pd
 import re
 from word2number import w2n
 from googletrans import Translator
+#<<<<<<< staging
+import logging
+
+logging.basicConfig(level=logging.INFO,filename="log",format="%(asctime)s - %(filename)s - %(levelname)s - %(message)s")
+
+# cria o tradutor uma vez só
+translator = Translator()
+ 
+#=======
 
 # cria o tradutor uma vez só
 translator = Translator()
 
+#>>>>>>> master
 df = pd.DataFrame(
     {
         "Valor1":["2.000","1.500","3.250"],
@@ -15,6 +25,11 @@ df = pd.DataFrame(
     }
 )
 
+#<<<<<<< staging
+logging.info(f'Os valores foram inseridos')
+
+#=======
+#>>>>>>> master
 def normalizar_numeros(v):
     if pd.isna(v):
         return None
