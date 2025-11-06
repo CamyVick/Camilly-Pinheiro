@@ -1,0 +1,151 @@
+;ID_Venda;Data_Venda;Vendedor;CPF;Cidade;UF;Produto;Categoria;Canal_Venda;Qtd_Vendas;Valor_Vendas;Salario;Meta_Mensal;Percentual_Cumprimento;Cliente;Email_Cliente;Telefone;Data_Cadastro
+0;VENDA-5262;2022-11-11;Igor Leão;684.025.197-76;fortaleza;ce;TV;Roupas;WhatsApp;26.0;31194.95;4528.22;70564.92;0.6;Sra. Maya Borges;jesusluisa@example.net;(021) 7932-0945;2021-05-10
+1;vnd6370;2017-11-02;Sr. Luiz Fernando Nogueira;51420736817;Curitiba;PR;TV;Móveis;WHATSAPP;;R$6406.28;R$7281.15;79258.38;104.7%;Dr. Renan Sales;montenegroantonella@example.net;(071) 3733 2421;2024-03-04
+2;VENDA-8482;1987-03-20;Cecília Sales;370.549.281-05;Recife;SP;BICICLETA;MÓVEIS;app;;R$2798.28;5464.22;R$ 56425.78;0.64;Lunna Pinto;maria-luizarocha@example.com;+55 (051) 0459-4452;
+3;VENDA-4681;1973-06-19;Allana Nascimento;18560472371;Fortaleza;CE;Bicicleta;Eletrônico;APP;45.0;2586.04;R$5954.1;R$ 34167.45;1.16;Rafael da Cruz;montenegroana-cecilia@example.net;(041) 1703-7693;2021-11-30
+4;6378;2022-12-19;Daniel Barbosa;024.713.658-17;rio de janeiro;PE;Boneca;AUTOMOTIVO;Telefone;4.0;R$5275.09;2325.27;20431.01;91.4%;Srta. Lara Andrade;casa-grandejose@example.com;(021) 6380 7596;2024-06-28
+5;VENDA-5357;1983-12-30;Anthony Gabriel Dias;245.631.809-98;Fortaleza;SP;Boneca;esporte;WhatsApp;;4284.04;5343.9;R$ 47888.55;60.6%;Maysa Oliveira;cecilia47@example.org;(051) 6978 5559;2024-01-17
+6;VENDA-2217;1975-11-12;Benjamin da Cunha;641.590.278-49;Fortaleza;RJ;Bicicleta;Esporte;WhatsApp;;R$19674.92;2005.88;;0.9;DAVI;silvavitor-hugo@example.com;6716190546;
+7;vnd7015;2023-04-19;Dr. Igor Moura;156.837.042-35;Belo Horizonte;PE;Perfume;beleza;Telefone;4.0;R$36878.14;R$4917.91;;75.7%;Theo da Conceição;das-nevesvalentina@example.com;81 0619-1768;2021-04-18
+8;9598;16/05/2025;Dr. Cauê Moraes;97365108240;Rio de Janeiro;RJ;Notebook;Móveis;WhatsApp;;31338.13;7787.0;R$ 62366.92;0.62;Davi Miguel Ramos;joao-guilherme90@example.net;7381193138;2021-10-17
+9;4403;2024-08-06;Dra. Vitória Ribeiro;930.658.427-00;curitiba;BA;Relógio;Móveis;Loja;10.0;37724.17;R$6245.05;;1.14;Dr. Rael Fogaça;macedoemilly@@example.net;3204924134;
+10;2800;24/02/2025;José Pedro Aragão;724.106.389-96;Fortaleza;pe;Perfume;Automotivo;loja;32.0;R$41385.21;R$3758.17;;0.94;ZOE;joana58@example.org;(071) 6803-0110;
+11;vnd6778;2025-02-15;;405.768.291-02;Recife;DF;Perfume;Automotivo;APP;;R$40778.25;R$5386.32;;114.0%;Liam Leão;matteo52@example.com;(011) 0896 9109;
+12;vnd2811;25/04/2025;Liz Pastor;147.905.386-48;Salvador;PR;Bicicleta;Beleza;Loja;;R$24214.26;R$6451.94;R$ 73022.36;80.5%;Vitor Gabriel Siqueira;fernandoviana@example.org;21 0204-7195;2021-04-15
+13;vnd7003;1999-08-21;Stella Sales;601.842.395-24;Fortaleza;ce;Bicicleta;beleza;Telefone;27.0;12607.94;3921.59;R$ 50798.7;1.02;Cauã Rocha;moreiramaya@@example.com;+55 11 3344 8546;2024-07-11
+14;7510;22/08/2025;Eduarda Siqueira;48651729049;Salvador;SP;Relógio;Brinquedos;online;;R$39844.87;3245.26;R$ 51532.19;0.63;VICENTE;machadoemanuelly@example.com;(031) 0259 0984;
+15;VENDA-1544;2010-12-20;Dra. Ana Júlia Barbosa;857.294.306-47;Rio de Janeiro;MG;SOFÁ;eletrônico;whatsapp;;6373.36;7861.83;47217.87;0.99;Luísa Pinto;sophie65@example.org;2379239563;2023-08-25
+16;vnd8879;1990-01-03;Sr. Pietro da Cruz;853.029.714-88;Salvador;PE;Notebook;Beleza;WhatsApp;12.0;15442.14;R$1696.96;R$ 59617.27;0.54;Alexia Garcia;maria-lizda-mota@example.com;21 3815 2746;2021-02-22
+17;VENDA-1729;1992-02-24;Elisa Araújo;951.428.630-89;São Paulo;MG;Capacete;Esporte;Telefone;;R$44258.17;4418.07;R$ 40423.64;119.4%;Dr. Otávio Sousa;santosnoah@example.org;+55 (081) 0006 5596;2024-02-27
+18;VENDA-7696;03/03/2025;Srta. Ana Laura Fonseca;517.940.268-94;Brasília;MG;Sofá ;Automotivo;WhatsApp;;48090.36;4781.81;43159.57;1.13;Dante Rios;diasluan@example.net;7104889305;2023-09-04
+19;1619;30/01/2025;Isabel Santos;09132546815;Salvador;CE;Boneca;Esporte;Telefone;;R$45968.1;R$2284.07;R$ 54820.67;57.5%;Dra. Gabrielly Nogueira;sara95@example.com;0300-904-6013;2022-11-16
+20;2385;29/05/2025;Luna Araújo;407.915.328-79;Recife;mg;Relógio;Brinqued0s;Telefone;17.0;10846.78;R$5394.22;R$ 26330.77;100.3%;Davi Martins;maria-julia71@example.org;+55 (084) 7000-3814;
+21;vnd5644;2024-08-03;Rael Rodrigues;396.720.458-83;Belo Horizonte;SP;Boneca;Automotivo;Loja;42.0;44728.31;R$6530.34;;87.0%;Antonella Fogaça;qmoraes@example.net;31 3207 1323;2023-04-24
+22;vnd4246;2024-01-28;Emilly Correia;578.402.693-38;Curitiba;RJ;Camisa;Beleza;APP;;8106.53;R$4035.35;R$ 69989.81;78.0%;Calebe da Cruz;diogomontenegro@example.org;(021) 8853-0419;2020-01-19
+23;VENDA-4395;15/01/2025;Maria Laura Freitas;834.627.951-55;São Paulo;SP;bicicleta;Roupas;Online;49.0;33439.55;R$5805.6;51174.13;0.6;Manuella Sá;alana93@example.org;41 6192 1720;2024-04-05
+24;VENDA-7861;2025-09-13;Emanuelly Rios;14539260898;Recife;BA;Biciclet@;Móveis;Online;43.0;R$11253.54;R$6258.86;46371.24;1.17;Nicole Brito;antonellamoura@example.com;+55 31 1305 7468;2021-06-06
+25;vnd1363;2024-08-10;João Lucas Ferreira;25087614949;recife;SP;Bicicleta ;BRINQUEDOS;WhatsApp;;R$38671.68;R$2450.89;77585.93;85.6%;Sr. Davi Jesus;ana-liviacavalcante@example.com;+55 (031) 0260 6020;2023-02-16
+26;1828;1973-09-08;;39208516768;Fortaleza;CE;Notebook;Beleza;Loja;24.0;R$14065.77;R$3282.57;R$ 66164.4;0.6;Dante Cardoso;joaopacheco@example.org;+55 (021) 1116 3199;2022-01-16
+27;vnd7820;15/01/2025;Antônio Casa Grande;807.493.625-29;Belo Horizonte;DF;Camisa;AUTOMOTIVO;Telefone;;R$29151.37;3253.09;;0.95;Laura Pereira;ana-juliamonteiro@example.com;84 1347 9975;2024-07-14
+28;VENDA-8235;2024-02-06;Brayan da Luz;342.571.908-41;Recife;RJ;Notebook;MÓVEIS;app;;7250.53;6079.51;;80.5%;Lunna Peixoto;barbosaluna@example.net;84 5124 7388;
+29;5222;2023-07-22;Alice Sampaio;90753862492;Recife;DF;bicicleta;ROUPAS;Telef0ne;;R$3340.48;R$5237.96;;57.6%;Mariah Dias;camaravitor-hugo@example.com;918005376;2022-07-09
+30;VENDA-6849;23/06/2025;Elisa Gonçalves;635.901.874-84;São Paulo;PE;Bicicleta;Brinquedos;WHATSAPP;;R$1541.53;7276.98;;0.89;Sr. Joaquim Leão;heloisanovais@example.net;+55 (031) 9855-8243;
+31;5319;11/03/2025;Dr. Enzo Ribeiro;604.329.571-70;Brasília;PR;NOTEBOOK;esporte;Loja;31.0;30194.0;R$4653.25;R$ 70719.71;53.5%;LUIZ FELIPE;ravyvieira@example.org;21 6201 7998;2025-08-07
+32;vnd7716;13/10/2025;Lucas Gabriel Viana;534.216.789-28;Recife;MG;Sofá;Automotivo;Loja;36.0;R$23963.64;3571.17;79397.21;96.4%;Luigi Teixeira;alexandrefreitas@example.org;61 0590-2924;2024-07-10
+33;7974;1974-04-05;Sra. Alexia Castro;859.274.316-82;Salvador;BA;boneca;Brinquedos;TELEFONE;;R$1078.54;R$7232.8;R$ 38473.31;0.86;Maria Cecília das Neves;azevedoana-clara@example.org;4301383033;
+34;6439;2023-07-02;Théo Almeida;548.293.761-55;Fortaleza;MG;CAMISA;Automotivo ;Telefone;;R$19075.48;4851.83;;0.61;Srta. Alice Borges;rochamaria-sophia@@example.net;(051) 7608 2374;2024-09-25
+35;vnd1836;2024-11-22;Larissa Sousa;921.685.473-19;Brasília;sp;Boneca;Eletrônico;Online;42.0;47703.46;7292.65;;0.85;Davi Moraes;eduardabrito@@example.net;+55 (041) 1657-5242;2021-02-06
+36;vnd6711;02/09/2025;Henrique Barros;73196254828;fortaleza;MG;Relógio;Beleza;telefone;;29750.57;R$6541.98;;0.96;Felipe Vieira;aragaomaria-helena@example.com;31 6303-1777;2024-05-09
+37;2292;2007-12-30;Nicolas Aparecida;842.361.057-80;São Paulo;SP;Capacete;Automotivo;APP;32.0;4123.57;7656.08;38729.51;66.4%;Dra. Lívia Leão;zda-luz@example.org;0300 672 9172;
+38;vnd4455;2022-06-08;Eduarda Barros;489.105.723-88;Brasília;RJ;CAPACETE;Eletrônico ;Online;50.0;R$33744.91;R$6456.14;R$ 36147.56;1.02;Maria Laura Barros;luara43@example.org;81 6595 5974;2023-02-24
+39;VENDA-7538;11/07/2025;Maitê Freitas;175.462.803-62;Recife;PE;Boneca;Brinquedos;WhatsApp;6.0;27774.16;5161.13;55837.08;118.2%;Kaique Lopes;mouraenzo-gabriel@example.org;+55 21 7256-6986;2025-02-02
+40;VENDA-7598;20/03/2025;Heitor Ramos;136.879.524-28;Brasília;RJ;Camisa;Automotivo;WhatsApp;;R$26382.34;R$1930.27;;0.72;Dra. Stephany Nogueira;catarina51@example.org;(061) 3653-1888;2020-03-26
+41;VENDA-3406;2022-11-11;Ana Lívia da Luz;762.054.981-11;brasília;SP;Relógio;esporte;WhatsApp;2.0;R$23251.33;R$4822.91;23829.4;66.0%;Mariana da Rosa;arthur17@example.org;+55 71 0268 5925;2023-12-26
+42;8017;2011-03-15;Antonella da Paz;14962805398;Fortaleza;SP;Perfume;Automotivo;TELEFONE;34.0;R$44786.12;R$5692.97;;0.73;Mariah Caldeira;esther37@example.org;5016206698;2023-03-11
+43;4118;2023-05-06;Maria Liz Cunha;128.496.075-76;Brasília;PR;Boneca;Eletrônico;Loja;43.0;43151.38;R$7954.88;R$ 71093.47;118.1%;Sr. Vinícius Abreu;catarinaguerra@example.net;9788191948;2022-10-26
+44;5000;17/10/2025;Dr. Enzo Gabriel Pinto;306.728.195-03;Rio de Janeiro;RJ;Notebook;Automotivo;Online;;R$40742.17;R$4453.24;;0.82;Allana da Paz;macedomaria@example.net;+55 51 0707 4819;2024-08-19
+45;VENDA-6375;24/01/2025;Sr. Fernando Pereira;458.607.129-01;Belo Horizonte;mg;Notebook;Roupas;Online;29.0;R$10083.66;7709.55;R$ 62988.43;59.9%;MARCELA;joaquim52@@example.org;84 4936 3329;
+46;VENDA-1302;2006-03-26;;56810749357;Belo Horizonte;PE;TV;Beleza;Telefone ;;R$20232.35;2129.36;34204.48;77.4%;Sr. Gustavo Duarte;udas-neves@example.org;81 4813-0318;2022-06-20
+47;vnd6082;26/01/2025;Diego Alves;647.192.530-16;São Paulo;PR;SOFÁ;móveis;app;10.0;32446.35;R$4353.14;R$ 27812.9;1.01;Oliver Melo;da-pazmaria-sophia@example.com;0500-813-5677;2024-12-17
+48;VENDA-7466;1996-07-26;João Miguel das Neves;657.290.413-06;São Paulo;PE;Camisa;Brinquedos;Online;;R$30187.44;3435.46;R$ 37606.56;50.1%;Thomas Cardoso;isampaio@example.net;+55 (071) 1620-0788;
+49;VENDA-8156;2023-03-13;Nicole Castro;385.204.197-04;Salvador;PR;Perfume;ELETRÔNICO;Loja;7.0;36789.29;4321.56;R$ 44084.82;70.0%;ISABELLY;garcianathan@example.com;8098944615;2021-02-05
+50;VENDA-2775;27/08/2025;Maria Eduarda Rezende;372.406.859-00;Belo Horizonte;rj;TV;Móveis;TELEFONE;11.0;41550.66;6916.11;;64.1%;Srta. Manuela Fogaça;moreiraayla@example.com;21 9977 4442;
+51;VENDA-6023;24/01/2025;Cauã Sales;385.294.671-91;Belo Horizonte;mg;Capacete;Automotivo;LOJA;;44461.37;4068.14;;101.8%;Stephany Pimenta;pedromartins@example.org;+55 41 6879-1716;2024-10-07
+52;VENDA-1905;2022-12-26;Maria Helena Cirino;327.450.918-32;Recife;RJ;Perfume;Eletrônico;Telef0ne;;49787.13;R$4928.4;R$ 20740.62;0.9;Noah da Costa;rochaanthony@@example.com;0900 878 3500;2025-10-05
+53;VENDA-1061;2024-10-27;Sr. Vinicius Oliveira;739.416.852-28;curitiba;CE;Relógio;Beleza;Loja;26.0;R$15121.43;R$3142.15;;68.6%;Srta. Maria Clara Vasconcelos;montenegrogustavo-henrique@example.net;31 7439 3528;
+54;vnd5484;20/08/2025;Dr. Ravy Pereira;758.294.310-41;Salvador;CE;Boneca;Roupas;online;;33827.0;R$1662.35;41362.37;119.4%;Sra. Melina Vieira;joanamelo@example.org;51 2503 5418;2024-12-30
+55;VENDA-7836;1975-04-09;Dr. Liam Souza;261.730.459-07;Salvador;df;Boneca;Automotivo;Online;38.0;R$46363.86;R$2072.63;36771.59;75.1%;Marcelo Cassiano;maria-vitoriavieira@@example.org;(011) 3667-0281;2021-01-21
+56;VENDA-3572;1987-10-11;Antony Pires;35296087186;São Paulo;DF;TV ;Roupas;APP;42.0;3666.61;R$6057.33;43882.66;99.1%;HELOISA;marquesantonio@@example.com;(081) 0466 0570;2022-11-14
+57;vnd1412;2015-03-12;Pietra Nunes;702.954.816-76;Rio de Janeiro;DF;perfume;Automotivo;APP;;R$30402.52;R$3286.34;42956.17;0.61;Giovanna Câmara;pda-conceicao@example.net;+55 71 1735-8857;
+58;vnd9908;2024-01-22;Alexandre Caldeira;579.381.604-66;curitiba;df;boneca;automotivo;WhatsApp;;R$34281.7;R$1892.25;;69.1%;José Miguel Pacheco;lorena18@@example.com;+55 11 8776 5382;2021-09-08
+59;VENDA-9373;2024-02-08;Beatriz Nogueira;738.129.564-46;Rio de Janeiro;DF;Bicicleta;AUTOMOTIVO;telefone;10.0;R$26637.56;5532.57;;1.1;Vitor Hugo da Paz;pcampos@example.net;+55 (071) 4545 2573;2024-02-19
+60;vnd1605;23/10/2025;Rodrigo Farias;06824195758;Curitiba;df;bicicleta;Eletrônico;WhatsApp;;10828.73;R$7586.35;27394.13;102.0%;Mariana Sousa;oliveirajoao-lucas@example.com;+55 (011) 5288 4462;
+61;vnd3072;2025-09-28;;40326517952;São Paulo;DF;Sofá;Automotivo;Online;;13229.55;2669.19;;112.8%;Leonardo Siqueira;macedomaria-luiza@example.org;21 3704-9496;2024-11-19
+62;VENDA-3316;1980-06-11;Nicolas Aragão;532.917.046-06;Brasília;MG;CAMISA;Eletrônico;ONLINE;;R$49613.16;R$4060.69;R$ 37380.92;60.2%;José Miguel Fogaça;das-nevesisis@example.org;+55 31 4320 3420;2023-04-15
+63;vnd1185;2024-05-30;Kevin Castro;732.968.015-02;Fortaleza;rj;Sofá;Eletrônico;WhatsApp;6.0;48982.77;R$5259.22;;0.79;Rebeca Monteiro;antoniosampaio@example.net;6553159582;2025-03-03
+64;VENDA-1717;2023-04-02;Ayla Nunes;568.749.312-37;Rio de Janeiro;df;Relógio;Beleza;APP;;3415.65;3299.09;R$ 68482.32;0.63;Isis Sousa;pereirabeatriz@example.net;+55 31 5034 4200;2024-10-27
+65;vnd6632;1974-09-20;Stella Câmara;706.392.158-40;Salvador;SP;Camisa;roupas;APP;;R$20165.55;R$7232.24;R$ 67044.79;73.5%;Ísis Teixeira;vcamara@@example.com;0900-675-8725;
+66;vnd2181;18/08/2025;Maria da Rosa;78530219414;Belo Horizonte;SP;Perfume;ELETRÔNICO;Online;44.0;R$12587.24;1608.64;R$ 27278.62;0.89;Sra. Gabriela Pastor;arthur-gabriel22@example.com;(041) 2227 3381;
+67;vnd8394;18/04/2025;Dra. Isabella Souza;512.086.374-44;Salvador;SP;bicicleta;Móveis;Online;37.0;7482.64;R$5054.99;R$ 68602.38;51.7%;Cecília Rocha;tnovais@example.org;+55 (031) 1734-3358;2025-02-17
+68;vnd9245;13/06/2025;Ana Beatriz Vasconcelos;260.453.897-00;Recife;PR;TV;ELETRÔNICO;Online;;R$8440.87;R$7294.06;41330.91;1.15;Thiago Duarte;kborges@@example.net;+55 (051) 1460 7959;2024-07-30
+69;3546;15/06/2025;Rael Jesus;246.317.590-70;Brasília;RJ;Relógio;Móveis;LOJA;;R$33297.28;2147.93;53124.09;0.51;Ana Vitória Costela;vcaldeira@example.net;+55 31 2632 6405;2023-07-02
+70;vnd8325;2024-06-13;Dra. Anna Liz Cavalcanti;501.872.469-20;Rio de Janeiro;DF;Bicicleta;Eletrônico;Telefone;2.0;R$41915.33;2428.16;;0.99;Dra. Natália Sales;tcastro@example.org;61 4871-3448;
+71;9427;2024-09-13;Sr. Davi Lucca Fernandes;103.576.492-06;Recife;PR;Perfume;Eletrônico;APP;;36713.55;R$4267.59;44849.51;104.0%;Gabrielly Cassiano;jose-pedrosantos@example.org;+55 51 5088 0501;
+72;9115;1974-11-17;Dr. Calebe Dias;39428501760;Fortaleza;DF;Perfume;Esporte;APP;25.0;17750.79;R$7316.47;;0.85;Dr. Murilo Abreu;carolineramos@example.net;8330772211;2024-08-16
+73;VENDA-5572;2025-08-03;;382.517.906-03;Belo Horizonte;MG;Relógio;Móveis;loja;9.0;10435.18;7744.53;R$ 27429.34;1.13;Sr. Isaac Siqueira;maria-claraduarte@example.org;+55 41 2558 4006;2021-07-29
+74;8912;2024-08-24;Ana Laura Alves;269.408.531-89;Recife;PE;TV;Beleza;Online;;1950.12;3431.8;R$ 30133.37;0.59;Ravy Cavalcante;manuelateixeira@example.com;11 5336-6874;2025-06-22
+75;VENDA-9564;05/01/2025;Luan Ribeiro;836.957.120-40;recife;sp;Bicicleta;Roupas;Online ;;15550.44;7365.3;;93.6%;Bianca Pastor;brayan96@example.org;+55 (011) 9641 7388;
+76;4634;2006-07-14;Maria Luiza Silva;645.230.971-43;São Paulo;df;TV;Beleza;TELEFONE;;R$15851.44;R$2826.06;23787.48;83.9%;Natália da Luz;hcunha@example.com;11 9538 3530;2025-05-23
+77;3417;2024-11-01;Luigi Pinto;647.983.052-00;Salvador;CE;Sofá;R0up@s;Loja;5.0;R$28661.94;4317.25;49047.52;87.5%;Julia Araújo;joao82@example.net;3125991842;2022-08-27
+78;VENDA-2014;2023-09-20;Emilly Melo;83410562915;Brasília;RJ;Relógio;Brinquedos;loja;;30229.0;1986.46;;0.62;JOANA;fariasana-sophia@example.org;7077404975;2025-06-27
+79;VENDA-8525;2003-10-12;Anthony Gonçalves;564.293.180-60;Belo Horizonte;rj;Capacete;móveis;Loja;7.0;R$20271.59;7173.05;R$ 50490.3;0.69;Carolina Caldeira;novaisnina@example.com;6338819974;2025-05-29
+80;vnd6879;28/09/2025;Nina da Cunha;489.167.205-67;fortaleza;DF;Camisa;BRINQUEDOS;WhatsApp;;R$10813.94;R$2692.15;35129.38;118.3%;Oliver Abreu;julia97@example.org;84 6982-2333;
+81;7257;28/01/2025;Breno da Rosa;301.468.725-17;Recife;MG;Sofá;ELETRÔNICO;APP;49.0;R$48909.42;R$7934.24;64535.31;116.9%;Valentina Freitas;oliveiravicente@example.org;0300-800-0918;2023-12-06
+82;VENDA-7963;2024-09-09;Ana Lívia Vasconcelos;243.157.806-26;Belo Horizonte;CE;Boneca;Automotivo;Telefone;;34529.6;5670.94;49172.9;1.05;Brenda Almeida;xribeiro@example.org;7599589239;2022-09-22
+83;VENDA-9784;1982-06-18;Bryan Silva;05149628360;recife;RJ;Bicicleta;Automotivo;telefone;;8067.37;7209.69;;0.95;Arthur Gabriel Lima;raul32@example.com;5568268946;
+84;7311;1973-12-30;Maria Cecília Souza;297.843.601-87;Brasília;SP;Sofá;Roupas;WhatsApp;;R$16363.62;R$4692.25;R$ 21663.83;0.96;Ana Liz da Rocha;raquel97@example.org;81 1052-1624;
+85;VENDA-8429;24/09/2025;Ravy da Mata;219.384.507-79;Fortaleza;PE;Sofá;Automotivo;WhatsApp;19.0;R$46095.78;6244.74;54843.57;104.9%;Francisco Castro;maria-alicecampos@example.org;+55 (081) 0251-9122;2023-05-21
+86;VENDA-3856;1982-06-27;Isis Pereira;46758092194;curitiba;ba;Bicicleta;Brinquedos;APP;;22936.69;3365.89;R$ 54286.56;72.0%;Olivia Gonçalves;ecamargo@example.net;(041) 1875 2027;2020-08-28
+87;vnd5064;2022-12-23;Gabrielly Almeida;295.106.348-24;São Paulo;DF;BICICLETA;Beleza;APP;;23128.72;R$3487.91;;109.1%;Nicole Borges;fariasdavi-miguel@example.org;11 3393-7109;2023-10-13
+88;vnd4756;2008-12-17;Mariana Lopes;839.270.654-47;Curitiba;sp;RELÓGIO;beleza;Online;;R$34496.23;7388.79;R$ 55319.38;54.7%;Eloah Moraes;montenegroana-carolina@example.org;61 3787-6425;2021-09-16
+89;6919;11/08/2025;Ravi Lucca Borges;764.315.809-66;curitiba;df;Boneca;Beleza;WhatsApp;6.0;39086.42;5666.7;;72.3%;Lucca Caldeira;isabellynunes@example.com;11 3996-0299;2023-11-02
+90;1315;1990-10-27;Yago Farias;35149072850;São Paulo;MG;Relógio;Beleza;TELEFONE;45.0;40215.16;R$7389.16;R$ 35819.27;1.13;Manuela Rezende;manuellarezende@example.com;+55 (071) 7646 7022;2023-05-24
+91;vnd2377;27/03/2025;Sr. José Ribeiro;528.190.364-06;Recife;PE;PERFUME;Brinquedos;APP;48.0;27054.89;R$2657.74;;115.0%;Pietra da Costa;ccosta@example.com;(061) 1852-8595;2023-03-14
+92;VENDA-9893;1983-08-20;Sra. Nina das Neves;98743016510;Recife;CE;BICICLETA;móveis;WhatsApp;40.0;R$36935.64;5007.27;R$ 66556.11;95.2%;Theo Cunha;da-conceicaovitoria@example.com;+55 (031) 4346 5147;2025-05-23
+93;VENDA-1051;2024-02-19;Isabelly das Neves;057.193.864-75;Brasília;RJ;CAPACETE;Eletrônico;TELEFONE;40.0;R$38533.78;R$3264.46;R$ 35870.35;1.17;Hellena da Mota;kevinnovaes@example.org;0900 402 7490;
+94;vnd7117;2023-07-23;Sr. Fernando da Costa;259.108.673-77;Belo Horizonte;PR;Boneca;Móveis;Online;;R$39577.01;R$7661.13;;0.64;Joana Melo;nicolas73@@example.net;0300-717-9361;
+95;vnd4474;25/04/2025;Vitória Casa Grande;50689234198;Salvador;SP;Sofá;ESPORTE;APP;;32966.71;R$3469.2;;116.7%;Dante Peixoto;ravy38@example.org;6521407159;2025-04-06
+96;VENDA-1162;2022-11-28;Marcos Vinicius Machado;850.193.624-33;Recife;CE;Camisa;Roupas;Online;;R$33098.41;1596.28;;0.76;Dr. Henrique Macedo;gabrielly35@example.com;0900-886-0744;
+97;VENDA-7536;1994-09-05;Sr. Lucca Costela;47920651352;Recife;SP;Capacete;esporte;app;27.0;26168.8;5243.24;;100.7%;Maria Cecília Moraes;hellena29@example.net;+55 81 7475-1731;
+98;7625;2002-06-19;Ana Beatriz da Luz;596.718.304-39;Brasília;mg;PERFUME;Beleza;telefone;;40060.39;6455.4;R$ 50721.63;1.08;Pietra Pinto;mouraemanuel@@example.org;(011) 6313 0043;2024-12-29
+99;VENDA-2353;2023-12-23;Maria Luiza Gomes;34590168251;Belo Horizonte;RJ;Boneca;Beleza;Loja;;36583.14;5169.44;;86.3%;Emilly Brito;luiz-gustavo49@example.org;+55 (081) 4512-2245;2024-02-11
+100;vnd1163;1994-02-17;Eduardo Abreu;758.936.410-00;Belo Horizonte;RJ;Capacete;Eletrônico;APP;;24270.39;R$2407.22;31338.71;75.0%;Caleb Costela;ramoscatarina@example.net;+55 (051) 9678-8609;2024-04-23
+101;2925;31/05/2025;Luna Andrade;240.851.739-79;Brasília;PR;CAMISA;ROUPAS;TELEFONE;10.0;R$9638.66;7310.42;R$ 29438.26;0.58;Carolina Sales;ralbuquerque@@example.net;(061) 4628-1378;
+102;vnd5885;1989-07-20;Sr. Lucas Gabriel Sá;167.893.205-12;Curitiba;SP;CAPACETE;Móveis;WhatsApp;50.0;R$24430.61;1968.42;24638.01;1.16;Olívia Monteiro;ojesus@example.net;51 4697 8458;
+103;VENDA-3809;12/03/2025;Pietro Costa;462.578.139-64;Rio de Janeiro;SP;Sofá;Móveis;Online;;R$33605.91;R$3975.51;;110.0%;Beatriz Sá;augustopacheco@example.org;+55 11 4026 6863;2023-04-03
+104;VENDA-3441;2024-03-05;Gael Carvalho;426.897.031-22;Salvador;BA;Notebook;brinquedos;whatsapp;27.0;32337.2;3831.91;R$ 30579.28;1.08;Caleb Montenegro;barbosahadassa@example.com;+55 41 0845-4146;2020-05-16
+105;VENDA-4681;01/05/2025;Luara Melo;706.293.851-30;Recife;MG;Capacete;MÓVEIS;WHATSAPP;42.0;R$5012.91;R$2772.63;;79.2%;Júlia Carvalho;wda-costa@example.com;+55 (051) 6966 7438;2022-01-10
+106;5104;2023-07-20;Pietra da Mata;18453296006;Belo Horizonte;DF;Relógio;automotivo;Online;19.0;R$41079.43;4712.6;R$ 41165.09;97.8%;Srta. Heloisa Rodrigues;yasminpastor@example.org;+55 (084) 7673 6373;2020-04-21
+107;vnd1792;12/10/2025;Mathias Santos;250.138.649-33;curitiba;PR;bicicleta;Brinquedos;Telefone;32.0;42286.74;7605.51;;0.57;Sra. Hadassa Costa;caldeiraluiz-felipe@example.net;+55 (061) 8048-5076;2023-06-22
+108;VENDA-8150;06/03/2025;Srta. Beatriz Rocha;716.325.480-62;Fortaleza;PE;Bicicleta;Beleza;WhatsApp;;R$36476.31;R$5639.03;;119.0%;Carolina Moura;isaac97@example.com;9133068261;2023-06-19
+109;7493;2023-11-25;Otto Melo;387.256.094-83;Curitiba;sp;relógio;Beleza;APP;50.0;47302.24;4604.29;R$ 51313.98;76.7%;Mathias Garcia;isaque31@example.org;+55 31 1772 4907;
+110;vnd3450;2009-01-08;Sra. Luara Moreira;168.059.723-02;Rio de Janeiro;rj;Perfume;Automotivo;Loja;19.0;28680.9;3952.94;R$ 50541.78;94.7%;MARIA CECÍLIA;ravi-lucca03@example.org;5075090536;2020-08-15
+111;VENDA-5412;2023-11-03;Luiz Otávio Barros;574.306.921-25;Belo Horizonte;PE;TV;BRINQUEDOS;Loja;47.0;15608.14;5428.11;;0.57;Dr. Pedro Miguel Pimenta;brenosouza@example.net;31 7535-2737;2023-08-27
+112;3036;2024-07-28;Murilo Casa Grande;507.219.843-04;Fortaleza;CE;perfume;Automotivo;app;25.0;R$6725.41;R$7828.77;R$ 26909.56;0.71;Gustavo Henrique Moura;salesheloisa@example.net;(061) 3242-9468;
+113;VENDA-1714;2024-10-26;Oliver da Cruz;276.453.801-44;Salvador;SP;Notebook;Eletrônico;WhatsApp;;370.96;3861.2;;1.13;AMANDA;maria-vitoriacavalcanti@example.net;+55 51 4229 7721;2020-12-26
+114;3103;2022-08-31;Rafael Siqueira;85162437026;Fortaleza;BA;TV;brinquedos;WhatsApp;21.0;R$4329.02;R$5206.99;R$ 47398.51;112.4%;Maysa Cavalcante;cda-rosa@example.com;0500-960-1860;
+115;vnd2947;14/09/2025;Isabela da Luz;257.314.608-17;Brasília;DF;TV;Eletrônico;APP;;14480.11;R$5801.26;31394.51;0.77;CAROLINA;matteo37@@example.org;+55 61 7073 4898;
+116;4452;2024-08-15;Murilo Macedo;205.743.698-56;salvador;RJ;Sofá;Automotivo;Online;;20904.19;R$7687.83;40098.08;0.68;Maysa Carvalho;laisferreira@example.net;51 9472 7728;2023-10-31
+117;VENDA-9087;09/06/2025;Dom Silveira;39175240661;Belo Horizonte;DF;relógio;AUTOMOTIVO;Telefone;;33595.89;R$3373.69;;54.8%;Arthur Gabriel da Cruz;otavio76@example.com;+55 11 1104-0440;2024-12-21
+118;1434;2023-09-04;Lorena Monteiro;948.170.536-66;Brasília;ba;Relógio;Brinquedos;APP;;26397.69;2159.79;R$ 60401.75;1.01;ARTHUR GABRIEL;leticiadias@example.net;1555798909;2022-11-08
+119;VENDA-4942;2006-02-23;Caroline Nascimento;527.391.460-43;Recife;sp;Boneca;Brinquedos;loja;;10215.17;R$7033.4;51115.44;0.95;Calebe Santos;camila81@example.com;(051) 4548-3900;2024-09-01
+120;VENDA-2924;1983-04-19;Luara Monteiro;417.965.238-28;Brasília;BA;Capacete;MÓVEIS;Telefone;23.0;R$40106.91;R$6779.41;64996.19;0.89;Enrico Sousa;joaquim66@example.org;0900-792-7064;2022-06-23
+121;1958;18/10/2025;Alana Montenegro;819.250.673-86;Curitiba;MG;Relógio;Eletrônico;APP;9.0;R$25223.66;6731.45;37816.44;82.8%;Enzo da Conceição;rvargas@example.org;0300-854-4008;2024-06-20
+122;vnd4954;2023-08-13;Dr. Lucca Marques;192.843.076-78;são paulo;MG;bicicleta;BELEZA;Online;;21639.6;R$3642.23;39220.69;110.0%;Sr. Gustavo Nascimento;scasa-grande@@example.com;0900-235-6530;
+123;vnd4154;2020-10-28;Felipe Cavalcanti;70648239500;Brasília;PR;Capacete;AUTOMOTIVO;Loja;;R$20329.88;R$1843.19;;0.94;Ana Cecília Moraes;paparecida@example.com;9573364349;
+124;1333;2005-02-01;Kaique Pinto;832.470.196-69;São Paulo;CE;Relógio;Beleza;Online;;35394.28;6824.88;77398.14;76.8%;Maria Luiza Vieira;helenarios@example.org;+55 81 9746 2089;2024-11-13
+125;VENDA-7440;21/02/2025;Sr. André Ribeiro;180.657.234-62;Brasília;MG;Relógio;Esporte;WhatsApp;;R$10391.22;1507.46;50884.18;1.04;MIRELLA;maria-luisacostela@example.org;81 2579-7690;
+126;VENDA-6740;21/08/2025;Ravi Lucca Fogaça;84653127026;Brasília;MG;Perfume;Automotivo;Telefone;41.0;39225.65;1540.6;R$ 69711.17;0.55;Ana Vitória Almeida;antonella41@example.com;+55 (041) 5458-2181;2022-11-19
+127;8330;15/07/2025;Isabelly Vasconcelos;386.140.927-50;Fortaleza;DF;Notebook;Esporte;Loja;;R$43999.59;R$7368.39;65759.07;99.5%;Daniela Camargo;oliveiraana-laura@example.com;(011) 5828-3841;2021-02-07
+128;VENDA-7265;2024-08-14;Sra. Maria Eduarda Vargas;20537894179;Salvador;BA;TV;ESPORTE;WhatsApp;;R$38538.14;R$2726.92;;72.7%;Alexandre Borges;maria85@example.net;+55 21 4129-8178;2020-06-08
+129;vnd5577;1972-10-09;Luara Carvalho;617.540.923-06;Salvador;BA;TV;Eletrônico;APP;8.0;42762.12;2664.16;R$ 44993.88;65.1%;Kaique Abreu;ana-carolina74@example.net;(061) 8481 3647;2025-08-17
+130;VENDA-7192;1983-12-06;Matheus Pastor;12064975802;Belo Horizonte;MG;BICICLETA;Brinquedos;APP;19.0;1281.5;R$2265.63;R$ 25544.1;0.73;EMANUEL;stella18@@example.com;(021) 4556 1263;2023-05-07
+131;vnd8529;07/10/2025;Maria Luiza Casa Grande;183.964.752-37;Belo Horizonte;RJ;Camisa;Esporte;Telefone;40.0;R$35885.7;R$6692.11;R$ 49843.72;103.8%;Helena Peixoto;jose84@example.org;8368925250;2023-04-22
+132;7771;2013-07-31;Antonella Gomes;30827419678;Curitiba;CE;Bicicleta;Móveis;WhatsApp;;R$47876.23;7833.14;;0.98;Yan Rezende;alice32@example.org;+55 (061) 8228-4467;2021-11-09
+133;VENDA-5574;2007-04-11;Luiz Henrique Moreira;894.257.630-38;Curitiba;PR;Capacete;Beleza;telefone;46.0;12305.99;7345.58;21572.45;92.4%;Felipe Mendes;raquelaragao@example.org;0300 411 3965;2020-02-09
+134;vnd2526;2021-01-19;Carlos Eduardo Cunha;608.327.451-62;Salvador;ba;Capacete;ROUPAS;Telef0ne;2.0;R$48239.22;7867.21;;107.6%;Isis Aparecida;andradematteo@example.com;+55 41 3816-9641;
+135;vnd5096;27/07/2025;Lara da Rosa;12704389560;Rio de Janeiro;RJ;Notebook;Automotivo;Online;;R$15583.92;4012.61;41891.41;94.0%;Kevin Rezende;rodrigo29@example.org;+55 31 5083 6907;2025-06-06
+136;6115;04/01/2025;Fernando Mendes;820.539.146-70;Rio de Janeiro;SP;Relógio;ESPORTE;TELEFONE;;14837.94;3564.89;;0.94;Brayan Camargo;camaramaria-fernanda@example.net;+55 (051) 6745-9318;
+137;4332;26/02/2025;Yan da Mata;89546123773;Brasília;DF;Perfume;Móveis;Online;3.0;R$26958.99;5684.9;R$ 76231.74;1.0;Luana Vieira;ravi28@example.org;81 5620-5682;2022-06-26
+138;5031;2008-05-02;Mathias Pacheco;642.791.350-61;São Paulo;MG;Capacete;Eletrônico ;Loja;35.0;R$28896.09;R$3864.63;46538.8;1.14;Ravi Campos;barbosaana-cecilia@example.org;+55 41 4605 0089;2025-08-03
+139;VENDA-7834;1982-01-25;Yasmin Carvalho;714.596.023-07;Fortaleza;CE;Sofá;Móveis;LOJA;;31672.27;1642.73;51116.01;0.56;Sr. Mathias Silveira;heloisa92@example.net;+55 (071) 0293 2282;2023-02-24
+140;4142;2014-01-09;Cauã da Rocha;54680329700;Recife;PE;Notebook;Brinquedos;Loja;46.0;6664.89;R$1833.17;;79.7%;Ana Vitória Pacheco;miguelfernandes@example.net;+55 (041) 5144-0596;2020-04-30
+141;4800;2020-06-29;Sofia Moura;097.862.513-77;salvador;rj;Boneca;Eletrônico;Loja;;36298.76;R$7466.25;35755.36;1.2;Emanuella Macedo;nicolascardoso@example.com;61 0451 8143;2022-01-21
+142;VENDA-3833;1994-07-13;Maria Flor Aparecida;783.129.546-19;Curitiba;DF;Relógio;MÓVEIS;Telefone;;17938.2;5713.02;;80.4%;Helena Caldeira;lavinia58@example.com;9878462228;2021-08-28
+143;VENDA-9110;2024-06-08;;943.658.107-66;belo horizonte;DF;Capacete;Esporte;WHATSAPP;9.0;40270.96;2947.64;;98.1%;ASAFE;aparecidaana@example.com;+55 (061) 0142-0754;2023-11-14
+144;VENDA-5557;2023-03-24;Beatriz Guerra;487.193.052-14;Rio de Janeiro;DF;Perfume;Automotivo;WhatsApp;2.0;R$33554.32;5010.31;;1.06;Isabelly Cavalcanti;camargojulia@example.com;(041) 4922 9220;2023-04-19
+145;vnd6474;20/07/2025;;810.742.635-53;Brasília;SP;Perfume;esporte;Loja;;3794.62;3101.23;R$ 42900.9;96.8%;Gabrielly Carvalho;beatrizgomes@example.net;11 9538-7100;2022-09-21
+146;vnd9862;2024-09-18;Fernanda Moraes;57038419250;Rio de Janeiro;ce;TV;MÓVEIS;Online;50.0;30652.02;R$5900.69;71883.31;57.8%;Dra. Antonella Câmara;mathiasrocha@example.com;+55 51 8634 6108;
+147;3287;2024-04-22;;810.236.459-98;são paulo;SP;CAMISA;Automotivo;Online;;R$21379.15;6494.17;R$ 24926.04;0.58;Camila da Mota;waragao@example.net;+55 84 6481-5852;2023-02-20
+148;VENDA-5277;2024-10-21;Sra. Heloisa Jesus;895.126.473-46;Rio de Janeiro;pe;Perfume ;Beleza;Telefone;;23743.83;R$2164.9;;95.8%;Dr. Nicolas Caldeira;ana-carolina40@example.net;+55 (021) 0714-1251;2022-07-22
+149;vnd8673;2025-01-27;Alice Garcia;817.945.023-60;Brasília;SP;Boneca;Esporte;Loja;22.0;R$31935.76;R$6268.52;R$ 79774.09;0.61;IAN;silvaisabella@example.net;71 9377-9732;2021-10-25
