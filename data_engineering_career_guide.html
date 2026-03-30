@@ -1,0 +1,654 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #0d0f1a;
+    color: #e2e8f0;
+    font-family: 'Space Grotesk', sans-serif;
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #0d0f1a 0%, #111827 50%, #0d0f1a 100%);
+    padding: 40px 32px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(99,102,241,0.2);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: 50%; transform: translateX(-50%);
+    width: 500px; height: 200px;
+    background: radial-gradient(ellipse, rgba(99,102,241,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: rgba(99,102,241,0.15);
+    border: 1px solid rgba(99,102,241,0.4);
+    color: #818cf8;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #e2e8f0 0%, #818cf8 50%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero p {
+    color: #64748b;
+    font-size: 14px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .section {
+    padding: 28px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .section-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #64748b;
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+  }
+
+  /* CAREER TRACK */
+  .track-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .track-connector {
+    width: 2px;
+    height: 20px;
+    background: linear-gradient(to bottom, rgba(99,102,241,0.5), rgba(99,102,241,0.2));
+    margin-left: 27px;
+  }
+
+  .track-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    cursor: pointer;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .track-item:hover {
+    background: rgba(99,102,241,0.06);
+    border-color: rgba(99,102,241,0.2);
+  }
+
+  .track-item.active {
+    background: rgba(99,102,241,0.1);
+    border-color: rgba(99,102,241,0.35);
+  }
+
+  .track-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    font-family: serif;
+  }
+
+  .level-1 .track-icon { background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3); }
+  .level-2 .track-icon { background: rgba(99,102,241,0.15); border: 1px solid rgba(99,102,241,0.3); }
+  .level-3 .track-icon { background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); }
+  .level-4 .track-icon { background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.3); }
+  .level-5 .track-icon { background: rgba(168,85,247,0.15); border: 1px solid rgba(168,85,247,0.3); }
+
+  .track-info { flex: 1; }
+
+  .track-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .track-years {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: #475569;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-weight: 400;
+  }
+
+  .track-desc {
+    font-size: 12px;
+    color: #64748b;
+    line-height: 1.5;
+  }
+
+  .track-salary {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #10b981;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  /* DETAIL PANEL */
+  .detail-panel {
+    background: rgba(15,17,28,0.9);
+    border: 1px solid rgba(99,102,241,0.25);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 8px;
+    display: none;
+    animation: fadeIn 0.2s ease;
+  }
+
+  .detail-panel.open { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .skill-group h4 {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #475569;
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 8px;
+  }
+
+  .skill-tag {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    margin: 2px;
+    font-weight: 500;
+  }
+
+  .tag-sql { background: rgba(56,189,248,0.1); color: #38bdf8; border: 1px solid rgba(56,189,248,0.2); }
+  .tag-python { background: rgba(250,204,21,0.1); color: #facc15; border: 1px solid rgba(250,204,21,0.2); }
+  .tag-spark { background: rgba(249,115,22,0.1); color: #f97316; border: 1px solid rgba(249,115,22,0.2); }
+  .tag-cloud { background: rgba(99,102,241,0.1); color: #818cf8; border: 1px solid rgba(99,102,241,0.2); }
+  .tag-arch { background: rgba(168,85,247,0.1); color: #c084fc; border: 1px solid rgba(168,85,247,0.2); }
+  .tag-lead { background: rgba(16,185,129,0.1); color: #34d399; border: 1px solid rgba(16,185,129,0.2); }
+
+  /* STACK GRID */
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .stack-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 10px;
+    padding: 14px 12px;
+    transition: all 0.2s;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .stack-card:hover {
+    background: rgba(99,102,241,0.08);
+    border-color: rgba(99,102,241,0.25);
+    transform: translateY(-1px);
+  }
+
+  .stack-emoji { font-size: 22px; margin-bottom: 8px; display: block; }
+
+  .stack-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin-bottom: 3px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .stack-cat {
+    font-size: 10px;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* PIPELINE */
+  .pipeline {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow-x: auto;
+    padding: 4px 0;
+    scrollbar-width: thin;
+  }
+
+  .pipe-step {
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 10px 14px;
+    text-align: center;
+    min-width: 90px;
+  }
+
+  .pipe-step:first-child { border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.06); }
+  .pipe-step:last-child { border-color: rgba(168,85,247,0.3); background: rgba(168,85,247,0.06); }
+
+  .pipe-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #e2e8f0;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .pipe-tool {
+    font-size: 10px;
+    color: #64748b;
+    margin-top: 2px;
+  }
+
+  .pipe-arrow {
+    flex-shrink: 0;
+    width: 28px;
+    height: 2px;
+    background: linear-gradient(to right, rgba(99,102,241,0.4), rgba(99,102,241,0.6));
+    position: relative;
+  }
+
+  .pipe-arrow::after {
+    content: '▶';
+    position: absolute;
+    right: -4px;
+    top: -7px;
+    font-size: 9px;
+    color: rgba(99,102,241,0.6);
+  }
+
+  /* CERTS */
+  .cert-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cert-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+
+  .cert-item:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.12);
+  }
+
+  .cert-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+    font-family: serif;
+  }
+
+  .cert-info h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin-bottom: 2px;
+  }
+
+  .cert-info p {
+    font-size: 11px;
+    color: #64748b;
+  }
+
+  .cert-level {
+    margin-left: auto;
+    font-size: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .lvl-basic { background: rgba(16,185,129,0.15); color: #34d399; }
+  .lvl-inter { background: rgba(245,158,11,0.15); color: #fbbf24; }
+  .lvl-adv   { background: rgba(239,68,68,0.15); color: #f87171; }
+
+  /* FOOTER STAT */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 24px;
+  }
+
+  .stat {
+    text-align: center;
+    padding: 16px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+  }
+
+  .stat-val {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    background: linear-gradient(135deg, #818cf8, #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    color: #475569;
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-tag">// roadmap 2025</div>
+  <h1>Engenharia de Dados</h1>
+  <p>Do zero ao principal — trilha de carreira, skills e stacks do mercado</p>
+</div>
+
+<!-- CAREER TRACK -->
+<div class="section">
+  <div class="section-title">Trilha de cargos</div>
+  <div class="track-container" id="track">
+
+    <div class="track-item level-1" onclick="toggle(this, 0)">
+      <div class="track-icon">🌱</div>
+      <div class="track-info">
+        <div class="track-title">Estagiário / Analista Jr <span class="track-years">0–1 ano</span></div>
+        <div class="track-desc">Primeiros passos com SQL, Python e pipelines simples</div>
+        <div class="track-salary">R$ 2k – 5k/mês</div>
+      </div>
+    </div>
+    <div class="detail-panel" id="d0">
+      <div class="skills-grid">
+        <div class="skill-group"><h4>Técnico</h4>
+          <span class="skill-tag tag-sql">SQL básico</span>
+          <span class="skill-tag tag-python">Python</span>
+          <span class="skill-tag tag-sql">Excel/Sheets</span>
+        </div>
+        <div class="skill-group"><h4>Ferramentas</h4>
+          <span class="skill-tag tag-cloud">Git</span>
+          <span class="skill-tag tag-sql">DBeaver</span>
+          <span class="skill-tag tag-python">Pandas</span>
+        </div>
+      </div>
+      <div style="font-size:12px;color:#64748b">Foco: aprender fundamentos de bancos de dados, versionamento de código e lógica de ETL básica.</div>
+    </div>
+    <div class="track-connector"></div>
+
+    <div class="track-item level-2" onclick="toggle(this, 1)">
+      <div class="track-icon">⚙️</div>
+      <div class="track-info">
+        <div class="track-title">Engenheiro de Dados Pleno <span class="track-years">2–4 anos</span></div>
+        <div class="track-desc">Pipelines robustos, orquestração e modelagem dimensional</div>
+        <div class="track-salary">R$ 8k – 16k/mês</div>
+      </div>
+    </div>
+    <div class="detail-panel" id="d1">
+      <div class="skills-grid">
+        <div class="skill-group"><h4>Técnico</h4>
+          <span class="skill-tag tag-sql">SQL avançado</span>
+          <span class="skill-tag tag-spark">Airflow</span>
+          <span class="skill-tag tag-python">dbt</span>
+          <span class="skill-tag tag-spark">Spark básico</span>
+        </div>
+        <div class="skill-group"><h4>Cloud</h4>
+          <span class="skill-tag tag-cloud">AWS / GCP</span>
+          <span class="skill-tag tag-cloud">S3 / BigQuery</span>
+          <span class="skill-tag tag-cloud">Docker</span>
+        </div>
+      </div>
+      <div style="font-size:12px;color:#64748b">Foco: construir e manter pipelines confiáveis, testes de qualidade de dados e modelagem de Data Warehouse.</div>
+    </div>
+    <div class="track-connector"></div>
+
+    <div class="track-item level-3" onclick="toggle(this, 2)">
+      <div class="track-icon">🔥</div>
+      <div class="track-info">
+        <div class="track-title">Engenheiro de Dados Sênior <span class="track-years">5–7 anos</span></div>
+        <div class="track-desc">Arquitetura de dados, streaming e liderança técnica</div>
+        <div class="track-salary">R$ 18k – 30k/mês</div>
+      </div>
+    </div>
+    <div class="detail-panel" id="d2">
+      <div class="skills-grid">
+        <div class="skill-group"><h4>Técnico</h4>
+          <span class="skill-tag tag-spark">Spark / Flink</span>
+          <span class="skill-tag tag-spark">Kafka</span>
+          <span class="skill-tag tag-arch">Data Mesh</span>
+          <span class="skill-tag tag-python">Iceberg/Delta</span>
+        </div>
+        <div class="skill-group"><h4>Soft skills</h4>
+          <span class="skill-tag tag-lead">Mentoria</span>
+          <span class="skill-tag tag-lead">Código review</span>
+          <span class="skill-tag tag-lead">Escrita técnica</span>
+        </div>
+      </div>
+      <div style="font-size:12px;color:#64748b">Foco: decisões de arquitetura, definição de padrões de engenharia e apoio a times de analytics e ML.</div>
+    </div>
+    <div class="track-connector"></div>
+
+    <div class="track-item level-4" onclick="toggle(this, 3)">
+      <div class="track-icon">🏗️</div>
+      <div class="track-info">
+        <div class="track-title">Staff / Lead Engineer <span class="track-years">8–12 anos</span></div>
+        <div class="track-desc">Define estratégia técnica e governa plataforma de dados</div>
+        <div class="track-salary">R$ 30k – 50k/mês</div>
+      </div>
+    </div>
+    <div class="detail-panel" id="d3">
+      <div class="skills-grid">
+        <div class="skill-group"><h4>Técnico</h4>
+          <span class="skill-tag tag-arch">Data Lakehouse</span>
+          <span class="skill-tag tag-arch">Data Catalog</span>
+          <span class="skill-tag tag-cloud">Multi-cloud</span>
+        </div>
+        <div class="skill-group"><h4>Liderança</h4>
+          <span class="skill-tag tag-lead">OKRs técnicos</span>
+          <span class="skill-tag tag-lead">Roadmap</span>
+          <span class="skill-tag tag-lead">Hiring</span>
+        </div>
+      </div>
+      <div style="font-size:12px;color:#64748b">Foco: visão cross-time, eliminação de dívida técnica e alinhamento com produto e negócio.</div>
+    </div>
+    <div class="track-connector"></div>
+
+    <div class="track-item level-5" onclick="toggle(this, 4)">
+      <div class="track-icon">🌐</div>
+      <div class="track-info">
+        <div class="track-title">Principal / Arquiteto / Head <span class="track-years">12+ anos</span></div>
+        <div class="track-desc">Visão organizacional, padrões e cultura de dados</div>
+        <div class="track-salary">R$ 50k – 100k+/mês</div>
+      </div>
+    </div>
+    <div class="detail-panel" id="d4">
+      <div class="skills-grid">
+        <div class="skill-group"><h4>Estratégico</h4>
+          <span class="skill-tag tag-arch">Data Strategy</span>
+          <span class="skill-tag tag-arch">Governance</span>
+          <span class="skill-tag tag-arch">Data Contracts</span>
+        </div>
+        <div class="skill-group"><h4>Negócio</h4>
+          <span class="skill-tag tag-lead">C-level comms</span>
+          <span class="skill-tag tag-lead">Budget</span>
+          <span class="skill-tag tag-lead">Vendor mgmt</span>
+        </div>
+      </div>
+      <div style="font-size:12px;color:#64748b">Foco: influenciar cultura data-driven, data mesh organizacional e modernização da plataforma.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PIPELINE -->
+<div class="section">
+  <div class="section-title">Pipeline moderno de dados</div>
+  <div class="pipeline">
+    <div class="pipe-step"><div class="pipe-name">Ingestão</div><div class="pipe-tool">Kafka · Fivetran</div></div>
+    <div class="pipe-arrow"></div>
+    <div class="pipe-step"><div class="pipe-name">Storage</div><div class="pipe-tool">S3 · GCS · ADLS</div></div>
+    <div class="pipe-arrow"></div>
+    <div class="pipe-step"><div class="pipe-name">Processamento</div><div class="pipe-tool">Spark · dbt</div></div>
+    <div class="pipe-arrow"></div>
+    <div class="pipe-step"><div class="pipe-name">Orquestração</div><div class="pipe-tool">Airflow · Prefect</div></div>
+    <div class="pipe-arrow"></div>
+    <div class="pipe-step"><div class="pipe-name">Warehouse</div><div class="pipe-tool">Snowflake · BQ</div></div>
+    <div class="pipe-arrow"></div>
+    <div class="pipe-step"><div class="pipe-name">Consumo</div><div class="pipe-tool">Looker · Metabase</div></div>
+  </div>
+</div>
+
+<!-- STACK -->
+<div class="section">
+  <div class="section-title">Stack essencial</div>
+  <div class="stack-grid">
+    <div class="stack-card"><span class="stack-emoji">🐍</span><div class="stack-name">Python</div><div class="stack-cat">Linguagem base</div></div>
+    <div class="stack-card"><span class="stack-emoji">🗄️</span><div class="stack-name">SQL</div><div class="stack-cat">Consulta & modelagem</div></div>
+    <div class="stack-card"><span class="stack-emoji">⚡</span><div class="stack-name">Spark</div><div class="stack-cat">Big data processing</div></div>
+    <div class="stack-card"><span class="stack-emoji">🔄</span><div class="stack-name">Airflow</div><div class="stack-cat">Orquestração</div></div>
+    <div class="stack-card"><span class="stack-emoji">📦</span><div class="stack-name">dbt</div><div class="stack-cat">Transformação</div></div>
+    <div class="stack-card"><span class="stack-emoji">☁️</span><div class="stack-name">AWS/GCP</div><div class="stack-cat">Cloud</div></div>
+    <div class="stack-card"><span class="stack-emoji">📨</span><div class="stack-name">Kafka</div><div class="stack-cat">Streaming</div></div>
+    <div class="stack-card"><span class="stack-emoji">🔬</span><div class="stack-name">Iceberg</div><div class="stack-cat">Table format</div></div>
+    <div class="stack-card"><span class="stack-emoji">🐳</span><div class="stack-name">Docker/K8s</div><div class="stack-cat">Infraestrutura</div></div>
+  </div>
+</div>
+
+<!-- CERTIFICAÇÕES -->
+<div class="section">
+  <div class="section-title">Certificações recomendadas</div>
+  <div class="cert-list">
+    <div class="cert-item">
+      <div class="cert-badge" style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3)">☁️</div>
+      <div class="cert-info"><h4>AWS Certified Data Engineer – Associate</h4><p>Amazon Web Services</p></div>
+      <span class="cert-level lvl-basic">Iniciante</span>
+    </div>
+    <div class="cert-item">
+      <div class="cert-badge" style="background:rgba(56,189,248,0.15);border:1px solid rgba(56,189,248,0.3)">❄️</div>
+      <div class="cert-info"><h4>Snowflake SnowPro Core</h4><p>Snowflake</p></div>
+      <span class="cert-level lvl-inter">Pleno</span>
+    </div>
+    <div class="cert-item">
+      <div class="cert-badge" style="background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.3)">🔷</div>
+      <div class="cert-info"><h4>GCP Professional Data Engineer</h4><p>Google Cloud</p></div>
+      <span class="cert-level lvl-inter">Pleno</span>
+    </div>
+    <div class="cert-item">
+      <div class="cert-badge" style="background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.3)">⚡</div>
+      <div class="cert-info"><h4>Databricks Certified Data Engineer</h4><p>Databricks</p></div>
+      <span class="cert-level lvl-adv">Sênior</span>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat"><div class="stat-val">+47%</div><div class="stat-label">Vagas em 3 anos</div></div>
+  <div class="stat"><div class="stat-val">5</div><div class="stat-label">Níveis de carreira</div></div>
+  <div class="stat"><div class="stat-val">10x</div><div class="stat-label">Salário sênior vs. júnior</div></div>
+</div>
+
+<script>
+  const panels = document.querySelectorAll('.detail-panel');
+
+  function toggle(item, idx) {
+    const panel = document.getElementById('d' + idx);
+    const isOpen = panel.classList.contains('open');
+    panels.forEach(p => p.classList.remove('open'));
+    document.querySelectorAll('.track-item').forEach(i => i.classList.remove('active'));
+    if (!isOpen) {
+      panel.classList.add('open');
+      item.classList.add('active');
+    }
+  }
+</script>
+</body>
+</html>
