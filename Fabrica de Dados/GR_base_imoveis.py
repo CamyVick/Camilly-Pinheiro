@@ -5,7 +5,7 @@ np.random.seed(42)
 
 dados = []
 
-for _ in range(10000):
+for _ in range(100000):
 
     tamanho = np.random.randint(40, 300)          # m²
     quartos = np.random.randint(1, 6)
