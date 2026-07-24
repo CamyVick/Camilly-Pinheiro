@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 Meu BI em Tempo Real</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- CDN para gráficos - Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Cabeçalho -->
+        <header>
+            <h1>📊 Dashboard BI - Tempo Real</h1>
+            <div class="status">
+                <span id="lastUpdate">Atualizado: agora</span>
+                <span class="badge online">🟢 Ao vivo</span>
+            </div>
+        </header>
+
+        <!-- Cards de KPIs -->
+        <section class="kpi-grid">
+            <div class="kpi-card">
+                <h3>💰 Vendas Totais</h3>
+                <p class="kpi-value" id="totalSales">R$ 0</p>
+                <span class="trend" id="salesTrend">▲ 0%</span>
+            </div>
+            <div class="kpi-card">
+                <h3>👥 Visitantes</h3>
+                <p class="kpi-value" id="totalVisitors">0</p>
+                <span class="trend" id="visitorsTrend">▲ 0%</span>
+            </div>
+            <div class="kpi-card">
+                <h3>🛒 Conversão</h3>
+                <p class="kpi-value" id="conversionRate">0%</p>
+                <span class="trend" id="conversionTrend">▲ 0%</span>
+            </div>
+            <div class="kpi-card">
+                <h3>⭐ Satisfação</h3>
+                <p class="kpi-value" id="satisfaction">0%</p>
+                <span class="trend" id="satisfactionTrend">▲ 0%</span>
+            </div>
+        </section>
+
+        <!-- Gráficos -->
+        <section class="charts-grid">
+            <div class="chart-card">
+                <h3>📈 Vendas por Categoria</h3>
+                <canvas id="salesChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>🌍 Visitantes por Região</h3>
+                <canvas id="regionChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Tabela de dados recentes -->
+        <section class="table-section">
+            <h3>📋 Últimas Transações</h3>
+            <table id="transactionsTable">
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Produto</th>
+                        <th>Valor</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Preenchido pelo JS -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
