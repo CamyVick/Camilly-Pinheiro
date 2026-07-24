@@ -1,462 +1,842 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Camilly Pinheiro · Data Engineer &amp; Cybersecurity</title>
+<meta name="description" content="Camilly Pinheiro — Data Engineer, Analytics, Machine Learning e Cybersecurity. Pipelines escaláveis, arquitetura moderna de dados e decisões orientadas por dados.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#050816;
+  --deep:#0B1120;
+  --panel:#121A29;
+  --elevated:#18273F;
+  --accent-deep:#2A4E7C;
+  --accent:#3FA9F5;
+  --ink:#EAF2FF;
+  --ink-70:rgba(234,242,255,.70);
+  --ink-50:rgba(234,242,255,.50);
+  --ink-30:rgba(234,242,255,.30);
+  --ink-14:rgba(234,242,255,.14);
+  --ink-08:rgba(234,242,255,.08);
+  --accent-14:rgba(63,169,245,.14);
+  --accent-30:rgba(63,169,245,.30);
+  --display:'Space Grotesk',sans-serif;
+  --body:'Inter',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --ease:cubic-bezier(.19,1,.22,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--void);
+  color:var(--ink);
+  font-family:var(--body);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--accent-30);color:#fff;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px;position:relative;z-index:2;}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to bottom, #0a0e27 0%, #1a1d3a 50%, #0f1229 100%);
-            color: #e0e0e0;
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-        }
+/* ---------- AMBIENT BACKGROUND ---------- */
+.ambient{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.ambient .base{position:absolute;inset:0;background:
+  radial-gradient(1100px 700px at 82% 8%, rgba(42,78,124,.35), transparent 60%),
+  radial-gradient(900px 600px at 10% 95%, rgba(63,169,245,.10), transparent 60%),
+  linear-gradient(180deg, var(--void) 0%, var(--deep) 45%, var(--void) 100%);
+}
+.ambient .lines{position:absolute;inset:0;opacity:.35;
+  background-image:linear-gradient(90deg, var(--ink-08) 1px, transparent 1px);
+  background-size:120px 100%;
+  mask-image:radial-gradient(1000px 700px at 78% 20%, black, transparent 70%);
+}
+.ambient .noise{position:absolute;inset:0;opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+.particle{position:fixed;z-index:1;border-radius:50%;background:var(--accent);
+  filter:blur(.3px);opacity:0;pointer-events:none;
+  animation:drift linear infinite;}
+@keyframes drift{
+  0%{transform:translateY(0);opacity:0;}
+  8%{opacity:.5;}
+  92%{opacity:.4;}
+  100%{transform:translateY(-120vh);opacity:0;}
+}
 
-        #stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-        }
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease), transform .9s var(--ease);}
+.reveal.in{opacity:1;transform:translateY(0);}
 
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 3s infinite;
-        }
+/* ---------- NAV ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s ease, border-color .4s ease, backdrop-filter .4s ease;
+  border-bottom:1px solid transparent;}
+nav.scrolled{background:rgba(5,8,22,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--ink-08);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px;}
+.brand{font-family:var(--mono);font-size:14px;letter-spacing:1.5px;color:var(--ink);display:flex;align-items:center;gap:9px;}
+.brand .pip{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);}
+.navlinks{display:flex;gap:34px;font-family:var(--mono);font-size:12.5px;letter-spacing:.5px;color:var(--ink-50);}
+.navlinks a{position:relative;padding:4px 0;transition:color .25s ease;}
+.navlinks a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--accent);transition:width .3s var(--ease);}
+.navlinks a:hover{color:var(--ink);}
+.navlinks a:hover::after{width:100%;}
+.nav-social{display:flex;align-items:center;gap:14px;}
+.nav-social a{width:34px;height:34px;border:1px solid var(--ink-14);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ink-50);transition:all .25s ease;}
+.nav-social a:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 0 16px rgba(63,169,245,.25);transform:translateY(-1px);}
+.nav-social svg{width:15px;height:15px;}
+.nav-toggle{display:none;width:38px;height:38px;border:1px solid var(--ink-14);border-radius:8px;align-items:center;justify-content:center;color:var(--ink);}
 
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
-        }
+/* ---------- LANGUAGE SWITCH ---------- */
+.lang-switch{position:relative;}
+.lang-btn{font-family:var(--mono);font-size:12px;letter-spacing:.5px;color:var(--ink-70);
+  background:transparent;border:1px solid var(--ink-14);border-radius:8px;padding:8px 12px;
+  display:flex;align-items:center;gap:8px;cursor:pointer;transition:all .25s ease;}
+.lang-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-14);}
+.lang-btn svg{width:13px;height:13px;flex-shrink:0;}
+.lang-btn .lang-chevron{width:9px;height:9px;transition:transform .25s var(--ease);}
+.lang-switch.open .lang-chevron{transform:rotate(180deg);}
+.lang-menu{position:absolute;top:calc(100% + 10px);right:0;min-width:172px;
+  background:var(--panel);border:1px solid var(--ink-14);border-radius:10px;overflow:hidden;
+  box-shadow:0 20px 50px -12px rgba(0,0,0,.6);
+  opacity:0;transform:translateY(-6px);pointer-events:none;transition:opacity .22s var(--ease), transform .22s var(--ease);z-index:250;}
+.lang-switch.open .lang-menu{opacity:1;transform:translateY(0);pointer-events:auto;}
+.lang-option{display:flex;align-items:center;gap:10px;padding:11px 14px;font-family:var(--mono);
+  font-size:12.5px;color:var(--ink-70);cursor:pointer;transition:background .2s ease,color .2s ease;}
+.lang-option:hover{background:var(--accent-14);color:var(--ink);}
+.lang-option.active{color:var(--accent);}
+.lang-option .flag{font-size:15px;line-height:1;}
+.lang-option .native{color:var(--ink-30);font-size:11px;margin-left:auto;}
+.mobile-lang{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:6px;}
+.mobile-lang button{font-family:var(--mono);font-size:12px;color:var(--ink-50);
+  border:1px solid var(--ink-14);border-radius:20px;padding:8px 16px;background:transparent;
+  display:flex;align-items:center;gap:7px;cursor:pointer;transition:all .25s ease;}
+.mobile-lang button.active,.mobile-lang button:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-14);}
+@media (max-width:640px){.lang-switch{display:none;}}
+.mobile-menu{position:fixed;inset:0;z-index:199;background:rgba(5,8,22,.98);backdrop-filter:blur(10px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;
+  opacity:0;pointer-events:none;transition:opacity .35s ease;}
+.mobile-menu.open{opacity:1;pointer-events:auto;}
+.mobile-menu a{font-family:var(--display);font-size:26px;color:var(--ink-70);}
+.mobile-menu a:hover{color:var(--accent);}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            position: relative;
-            z-index: 1;
-        }
+/* ---------- HERO ---------- */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:76px;position:relative;}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;width:100%;}
+.eyebrow{font-family:var(--mono);font-size:12.5px;color:var(--accent);letter-spacing:3px;text-transform:uppercase;
+  display:flex;align-items:center;gap:12px;margin-bottom:26px;}
+.eyebrow::before{content:"";width:30px;height:1px;background:var(--accent);}
+.hero-name{font-family:var(--display);font-weight:700;font-size:clamp(46px,7.4vw,96px);line-height:.98;letter-spacing:-2px;}
+.hero-name span{display:block;}
+.hero-name .last{background:linear-gradient(120deg,var(--accent-deep),var(--accent) 70%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.hero-roles{display:flex;flex-wrap:wrap;gap:10px 0;font-family:var(--mono);font-size:14px;color:var(--ink-50);margin-top:26px;}
+.hero-roles span{display:flex;align-items:center;}
+.hero-roles span::after{content:"·";margin:0 14px;color:var(--ink-30);}
+.hero-roles span:last-child::after{display:none;}
+.hero-lede{max-width:560px;color:var(--ink-70);font-size:17px;margin-top:24px;font-weight:400;}
+.hero-actions{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap;}
+.btn{font-family:var(--mono);font-size:13px;letter-spacing:.5px;padding:14px 28px;border-radius:8px;
+  border:1px solid var(--ink-14);transition:all .3s var(--ease);display:inline-flex;align-items:center;gap:9px;}
+.btn-primary{background:var(--accent);color:var(--void);font-weight:600;border:none;box-shadow:0 0 0 rgba(63,169,245,0);}
+.btn-primary:hover{box-shadow:0 0 30px rgba(63,169,245,.45);transform:translateY(-2px);}
+.btn-ghost{color:var(--ink-70);}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);background:var(--accent-14);}
+.scroll-cue{position:absolute;left:40px;bottom:38px;display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:11px;color:var(--ink-30);letter-spacing:2px;text-transform:uppercase;}
+.scroll-cue .line{width:1px;height:38px;background:linear-gradient(var(--ink-30),transparent);position:relative;overflow:hidden;}
+.scroll-cue .line::after{content:"";position:absolute;top:-40%;left:0;width:100%;height:40%;background:var(--accent);animation:scrollline 2.2s ease-in-out infinite;}
+@keyframes scrollline{0%{top:-40%;}100%{top:100%;}}
 
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background: rgba(20, 25, 50, 0.6);
-            border-radius: 20px;
-            margin-bottom: 40px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(100, 150, 255, 0.2);
-        }
+/* ---------- HERO PHOTO / SCENE ---------- */
+.photo-stage{position:relative;justify-self:end;width:100%;max-width:460px;aspect-ratio:3/4;}
+.scene{position:absolute;inset:-18% -30% -12% -18%;border-radius:28px;overflow:hidden;}
+.scene .monitor-glow{position:absolute;top:8%;right:6%;width:58%;height:42%;
+  background:radial-gradient(circle, rgba(63,169,245,.55), rgba(42,78,124,.18) 55%, transparent 75%);
+  filter:blur(28px);}
+.scene .desk-line{position:absolute;left:6%;right:6%;bottom:20%;height:1px;
+  background:linear-gradient(90deg,transparent, var(--accent-30) 40%, var(--accent-30) 60%, transparent);
+  opacity:.5;}
+.scene .side-light{position:absolute;inset:0;
+  background:linear-gradient(115deg, rgba(63,169,245,.10) 0%, transparent 35%, transparent 65%, rgba(5,8,22,.6) 100%);}
+.scene .vignette{position:absolute;inset:0;box-shadow:inset 0 0 140px 60px rgba(5,8,22,.9);}
 
-        h1 {
-            font-size: 3em;
-            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
+.pulse-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;}
+.pulse-wrap svg{width:135%;height:135%;overflow:visible;}
+.pulse-ring{fill:none;stroke:var(--accent);stroke-width:1;transform-origin:center;opacity:0;
+  animation:pulseRing 5.4s var(--ease) infinite;}
+.pulse-ring:nth-child(2){animation-delay:1.35s;}
+.pulse-ring:nth-child(3){animation-delay:2.7s;}
+@keyframes pulseRing{
+  0%{transform:scale(.55);opacity:0;}
+  12%{opacity:.55;}
+  100%{transform:scale(1.05);opacity:0;}
+}
 
-        .subtitle {
-            font-size: 1.2em;
-            color: #a0a0ff;
-        }
+.photo-mask{position:absolute;inset:6% 8% 0 8%;z-index:2;
+  mask-image:radial-gradient(ellipse 78% 88% at 50% 38%, black 42%, transparent 82%);
+  -webkit-mask-image:radial-gradient(ellipse 78% 88% at 50% 38%, black 42%, transparent 82%);}
+.photo-mask img{width:100%;height:100%;object-fit:cover;
+  filter:grayscale(35%) contrast(1.15) brightness(.92);
+  mix-blend-mode:luminosity;opacity:.94;}
+.photo-mask::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(200deg, rgba(63,169,245,.22), transparent 55%),
+             linear-gradient(0deg, var(--void) 0%, transparent 30%);
+  mix-blend-mode:overlay;}
+.photo-mask.no-img img{display:none;}
+.photo-mask.no-img{display:flex;align-items:center;justify-content:center;}
+.photo-mask.no-img::before{content:"CP";font-family:var(--display);font-weight:700;font-size:96px;
+  color:var(--ink-08);letter-spacing:2px;}
 
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;text-align:left;}
+  .photo-stage{justify-self:center;max-width:300px;margin-top:40px;}
+  .scroll-cue{display:none;}
+}
 
-        .stat-item {
-            background: rgba(100, 150, 255, 0.1);
-            padding: 15px 30px;
-            border-radius: 10px;
-            border: 1px solid rgba(100, 150, 255, 0.3);
-        }
+/* ---------- SECTIONS ---------- */
+section{padding:150px 0;position:relative;}
+.section-head{margin-bottom:64px;}
+.kicker{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:3px;text-transform:uppercase;display:flex;align-items:center;gap:12px;}
+.kicker::before{content:"";width:22px;height:1px;background:var(--accent);}
+.section-title{font-family:var(--display);font-weight:600;font-size:clamp(28px,3.6vw,44px);margin-top:14px;letter-spacing:-1px;max-width:640px;}
 
-        .stat-number {
-            font-size: 2em;
-            font-weight: bold;
-            color: #667eea;
-        }
+/* ---------- ABOUT ---------- */
+#about{padding:0;}
+.about-split{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;}
+.about-photo-wrap{position:relative;background:var(--void);overflow:hidden;}
+.about-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 20%;
+  filter:grayscale(70%) brightness(.72) contrast(1.2);}
+.about-photo-wrap::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(100deg, rgba(5,8,22,.15) 0%, transparent 45%, rgba(5,8,22,.55) 100%),
+             linear-gradient(0deg, var(--void) 0%, transparent 25%);}
+.about-photo-wrap.no-img{display:flex;align-items:center;justify-content:center;}
+.about-photo-wrap.no-img img{display:none;}
+.about-photo-wrap.no-img::before{content:"CP";position:relative;z-index:1;font-family:var(--display);
+  font-weight:700;font-size:120px;color:var(--ink-08);}
+.about-content{display:flex;flex-direction:column;justify-content:center;padding:100px 72px;}
+.about-content h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,3.6vw,42px);margin:16px 0 24px;letter-spacing:-1px;}
+.about-content p{color:var(--ink-70);font-size:16px;max-width:520px;}
+.about-content p+p{margin-top:16px;}
+.about-meta{display:flex;gap:40px;margin-top:48px;font-family:var(--mono);font-size:12px;color:var(--ink-50);flex-wrap:wrap;}
+.about-meta b{color:var(--ink);display:block;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;font-weight:500;}
 
-        .stat-label {
-            font-size: 0.9em;
-            color: #a0a0ff;
-        }
+@media (max-width:900px){
+  .about-split{grid-template-columns:1fr;}
+  .about-photo-wrap{height:380px;}
+  .about-content{padding:64px 28px;}
+}
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            padding: 20px 0;
-        }
+/* ---------- RESUME / DASHBOARD ---------- */
+.stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ink-08);
+  border:1px solid var(--ink-08);border-radius:14px;overflow:hidden;margin-bottom:80px;}
+.stat-card{background:var(--panel);padding:28px 26px;}
+.stat-num{font-family:var(--display);font-size:30px;color:var(--accent);font-weight:600;}
+.stat-label{font-family:var(--mono);font-size:11px;color:var(--ink-50);letter-spacing:.5px;margin-top:6px;}
 
-        .project-card {
-            background: rgba(20, 25, 50, 0.8);
-            border-radius: 15px;
-            overflow: hidden;
-            border: 1px solid rgba(100, 150, 255, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-        }
+.resume-grid{display:grid;grid-template-columns:.95fr 1.25fr .8fr;gap:56px;align-items:start;}
+.col-title{font-family:var(--mono);font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--ink-50);margin-bottom:26px;padding-bottom:14px;border-bottom:1px solid var(--ink-08);}
+.block+.block{margin-top:48px;}
 
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-        }
+.skill-row{margin-bottom:20px;}
+.skill-top{display:flex;justify-content:space-between;font-size:13.5px;color:var(--ink-70);margin-bottom:9px;}
+.skill-top span.pct{font-family:var(--mono);font-size:11px;color:var(--ink-30);}
+.skill-track{height:2px;background:var(--ink-08);border-radius:2px;position:relative;}
+.skill-fill{height:100%;background:linear-gradient(90deg,var(--accent-deep),var(--accent));border-radius:2px;position:relative;}
+.skill-fill::after{content:"";position:absolute;right:-3px;top:50%;transform:translateY(-50%);
+  width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);}
 
-        .project-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2em;
-        }
+.tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;}
+.tech-item{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12.5px;color:var(--ink-70);
+  padding:10px 0;border-bottom:1px solid var(--ink-08);}
+.tech-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);flex-shrink:0;}
 
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+.timeline{position:relative;padding-left:30px;}
+.timeline::before{content:"";position:absolute;left:4px;top:6px;bottom:6px;width:1px;background:var(--ink-14);}
+.tl-item{position:relative;margin-bottom:52px;}
+.tl-item:last-child{margin-bottom:0;}
+.tl-item::before{content:"";position:absolute;left:-30px;top:5px;width:9px;height:9px;border-radius:50%;
+  background:var(--void);border:2px solid var(--accent);box-shadow:0 0 10px rgba(63,169,245,.4);}
+.tl-item .period{font-family:var(--mono);font-size:11.5px;color:var(--accent);letter-spacing:1px;}
+.tl-item h3{font-family:var(--display);font-size:19px;font-weight:600;margin-top:8px;}
+.tl-item .company{color:var(--ink-50);font-size:13.5px;margin-bottom:16px;font-family:var(--mono);}
+.tl-item li{color:var(--ink-70);font-size:14px;padding-left:20px;position:relative;margin-bottom:10px;}
+.tl-item li::before{content:"→";position:absolute;left:0;color:var(--accent);font-family:var(--mono);font-size:12px;}
 
-        .project-content {
-            padding: 20px;
-        }
+.edu-item{padding:18px 0;border-bottom:1px solid var(--ink-08);}
+.edu-item:first-child{border-top:1px solid var(--ink-08);}
+.edu-item .fname{font-size:14px;font-weight:600;}
+.edu-item .fschool{color:var(--ink-50);font-size:12.5px;margin-top:4px;font-family:var(--mono);}
+.edu-item .fyear{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:6px;display:inline-block;}
 
-        .project-title {
-            font-size: 1.5em;
-            color: #667eea;
-            margin-bottom: 10px;
-        }
+@media (max-width:980px){
+  .resume-grid{grid-template-columns:1fr;}
+  .stat-strip{grid-template-columns:repeat(2,1fr);}
+}
 
-        .project-description {
-            color: #b0b0b0;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
+/* ---------- PROJECTS ---------- */
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.project-card{position:relative;border-radius:16px;padding:32px 28px;min-height:260px;
+  display:flex;flex-direction:column;overflow:hidden;
+  background:linear-gradient(160deg, rgba(18,26,41,.75), rgba(11,17,32,.85));
+  border:1px solid var(--ink-08);backdrop-filter:blur(6px);
+  transition:transform .4s var(--ease), border-color .4s ease, box-shadow .4s ease;}
+.project-card::before{content:"";position:absolute;inset:0;z-index:0;opacity:.5;
+  background:radial-gradient(400px 260px at var(--gx,80%) var(--gy,0%), rgba(63,169,245,.16), transparent 65%);
+  transition:opacity .4s ease;}
+.project-card:hover{transform:translateY(-6px);border-color:var(--accent-30);
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.55), 0 0 40px -12px rgba(63,169,245,.25);}
+.project-card > *{position:relative;z-index:1;}
+.pnum{font-family:var(--mono);font-size:11px;color:var(--ink-30);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px;}
+.project-card h3{font-family:var(--display);font-size:19px;font-weight:600;margin-bottom:12px;}
+.project-card p{color:var(--ink-50);font-size:13.5px;flex-grow:1;}
+.tag-row{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-family:var(--mono);font-size:10.5px;padding:5px 10px;border-radius:5px;
+  background:var(--ink-08);border:1px solid var(--ink-14);color:var(--ink-50);}
 
-        .project-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(100, 150, 255, 0.2);
-        }
+@media (max-width:980px){.project-grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:640px){.project-grid{grid-template-columns:1fr;}}
 
-        .views {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            color: #a0a0ff;
-            font-size: 0.9em;
-        }
+/* ---------- CONTACT ---------- */
+footer{padding:130px 0 60px;border-top:1px solid var(--ink-08);}
+.contact-title{font-family:var(--display);font-size:clamp(28px,4.2vw,46px);font-weight:600;max-width:640px;
+  margin-bottom:34px;letter-spacing:-1px;}
+.contact-links{display:flex;gap:14px;flex-wrap:wrap;}
+.foot-meta{margin-top:90px;display:flex;justify-content:space-between;color:var(--ink-30);
+  font-family:var(--mono);font-size:11.5px;flex-wrap:wrap;gap:10px;letter-spacing:.5px;}
 
-        .github-link {
-            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: opacity 0.3s;
-            font-weight: 500;
-        }
+@media (max-width:640px){
+  .wrap{padding:0 22px;}
+  section{padding:100px 0;}
+  .navlinks,.nav-social{display:none;}
+  .nav-toggle{display:flex;}
+}
 
-        .github-link:hover {
-            opacity: 0.8;
-        }
-
-        .add-project-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-            border: none;
-            border-radius: 50%;
-            color: white;
-            font-size: 2em;
-            cursor: pointer;
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.5);
-            transition: transform 0.3s;
-            z-index: 1000;
-        }
-
-        .add-project-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: rgba(20, 25, 50, 0.95);
-            padding: 30px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 500px;
-            border: 1px solid rgba(100, 150, 255, 0.3);
-        }
-
-        .modal-content h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            color: #a0a0ff;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            background: rgba(10, 14, 39, 0.6);
-            border: 1px solid rgba(100, 150, 255, 0.3);
-            border-radius: 8px;
-            color: #e0e0e0;
-            font-family: inherit;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
-
-        .modal-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .btn {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: opacity 0.3s;
-        }
-
-        .btn-primary {
-            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .btn-secondary {
-            background: rgba(100, 100, 100, 0.5);
-            color: white;
-        }
-
-        .btn:hover {
-            opacity: 0.8;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation:none !important;transition:none !important;}
+  .reveal{opacity:1;transform:none;}
+}
+</style>
 </head>
 <body>
-    <div id="stars"></div>
 
-    <div class="container">
-        <header>
-            <h1>Meu Portfólio</h1>
-            <p class="subtitle">Desenvolvedor Full Stack</p>
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-number" id="totalProjects">0</div>
-                    <div class="stat-label">Projetos</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="totalViews">0</div>
-                    <div class="stat-label">Visualizações</div>
-                </div>
-            </div>
-        </header>
+<div class="ambient">
+  <div class="base"></div>
+  <div class="lines"></div>
+  <div class="noise"></div>
+</div>
 
-        <div class="projects-grid" id="projectsGrid">
-            <!-- Projetos serão inseridos aqui -->
-        </div>
+<nav id="nav">
+  <div class="wrap nav-inner">
+    <div class="brand"><span class="pip"></span>CAMILLY.PINHEIRO</div>
+    <div class="navlinks">
+      <a href="#home" data-i18n="nav.home">Home</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#resume" data-i18n="nav.resume">Resume</a>
+      <a href="#projetos" data-i18n="nav.projects">Projects</a>
+      <a href="#experience" data-i18n="nav.experience">Experience</a>
+      <a href="#contato" data-i18n="nav.contact">Contact</a>
+    </div>
+    <div class="nav-social">
+      <a href="https://github.com/CamyVick/Camilly-Pinheiro" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.44-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.58.24 2.75.12 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/camilly-pinheiro-dados" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+      </a>
+      <a href="mailto:camilly2victoria@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 5h18v14H3z"/><path d="m3 6 9 7 9-7"/></svg>
+      </a>
     </div>
 
-    <button class="add-project-btn" onclick="openModal()">+</button>
-
-    <div class="modal" id="projectModal">
-        <div class="modal-content">
-            <h2>Adicionar Novo Projeto</h2>
-            <form id="projectForm">
-                <div class="form-group">
-                    <label>Título do Projeto</label>
-                    <input type="text" id="projectTitle" required>
-                </div>
-                <div class="form-group">
-                    <label>Descrição</label>
-                    <textarea id="projectDescription" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label>URL da Imagem</label>
-                    <input type="url" id="projectImage" placeholder="https://exemplo.com/imagem.jpg">
-                </div>
-                <div class="form-group">
-                    <label>Link do GitHub</label>
-                    <input type="url" id="projectGithub" required placeholder="https://github.com/usuario/projeto">
-                </div>
-                <div class="modal-buttons">
-                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
-                    <button type="submit" class="btn btn-primary">Adicionar</button>
-                </div>
-            </form>
-        </div>
+    <div class="lang-switch" id="langSwitch">
+      <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.7 4 6.1 4 9.5s-1.4 6.8-4 9.5c-2.6-2.7-4-6.1-4-9.5s1.4-6.8 4-9.5Z"/></svg>
+        <span id="langBtnLabel">PT</span>
+        <svg class="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="lang-menu" id="langMenu">
+        <div class="lang-option" data-lang="pt"><span class="flag">🇧🇷</span>Português<span class="native">PT</span></div>
+        <div class="lang-option" data-lang="en"><span class="flag">🇺🇸</span>English<span class="native">EN</span></div>
+        <div class="lang-option" data-lang="es"><span class="flag">🇪🇸</span>Español<span class="native">ES</span></div>
+        <div class="lang-option" data-lang="fr"><span class="flag">🇫🇷</span>Français<span class="native">FR</span></div>
+        <div class="lang-option" data-lang="de"><span class="flag">🇩🇪</span>Deutsch<span class="native">DE</span></div>
+      </div>
     </div>
 
-    <script>
-        // Criar estrelas
-        function createStars() {
-            const starsContainer = document.getElementById('stars');
-            for (let i = 0; i < 200; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.width = Math.random() * 2 + 'px';
-                star.style.height = star.style.width;
-                star.style.animationDelay = Math.random() * 3 + 's';
-                starsContainer.appendChild(star);
-            }
-        }
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
 
-        // Gerenciamento de projetos
-        let projects = JSON.parse(localStorage.getItem('projects')) || [];
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" data-i18n="nav.home">Home</a>
+  <a href="#about" data-i18n="nav.about">About</a>
+  <a href="#resume" data-i18n="nav.resume">Resume</a>
+  <a href="#projetos" data-i18n="nav.projects">Projects</a>
+  <a href="#experience" data-i18n="nav.experience">Experience</a>
+  <a href="#contato" data-i18n="nav.contact">Contact</a>
+  <div class="mobile-lang">
+    <button data-lang="pt">🇧🇷 PT</button>
+    <button data-lang="en">🇺🇸 EN</button>
+    <button data-lang="es">🇪🇸 ES</button>
+    <button data-lang="fr">🇫🇷 FR</button>
+    <button data-lang="de">🇩🇪 DE</button>
+  </div>
+</div>
 
-        function saveProjects() {
-            localStorage.setItem('projects', JSON.stringify(projects));
-        }
+<header class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow reveal" data-i18n="hero.eyebrow">Data Engineering · Cybersecurity · ML</div>
+      <h1 class="hero-name reveal">
+        <span>CAMILLY</span>
+        <span class="last">PINHEIRO</span>
+      </h1>
+      <div class="hero-roles reveal">
+        <span data-i18n="hero.role1">Data Engineer</span>
+        <span data-i18n="hero.role2">Analytics</span>
+        <span data-i18n="hero.role3">Machine Learning</span>
+        <span data-i18n="hero.role4">Cybersecurity</span>
+      </div>
+      <p class="hero-lede reveal" data-i18n="hero.lede">Transformando dados em decisões através de pipelines escaláveis, automação e arquitetura moderna de dados.</p>
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary" href="#resume" data-i18n="hero.btnResume">Resume</a>
+        <a class="btn btn-ghost" href="#projetos" data-i18n="hero.btnPortfolio">Portfolio</a>
+      </div>
+    </div>
 
-        function renderProjects() {
-            const grid = document.getElementById('projectsGrid');
-            grid.innerHTML = '';
-            
-            let totalViews = 0;
-            
-            projects.forEach((project, index) => {
-                totalViews += project.views || 0;
-                
-                const card = document.createElement('div');
-                card.className = 'project-card';
-                card.onclick = () => incrementViews(index);
-                
-                card.innerHTML = `
-                    <div class="project-image">
-                        ${project.image ? `<img src="${project.image}" alt="${project.title}">` : project.title}
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">${project.title}</h3>
-                        <p class="project-description">${project.description}</p>
-                        <div class="project-footer">
-                            <div class="views">
-                                <span>👁️</span>
-                                <span>${project.views || 0} visualizações</span>
-                            </div>
-                            <a href="${project.github}" target="_blank" class="github-link" onclick="event.stopPropagation()">GitHub</a>
-                        </div>
-                    </div>
-                `;
-                
-                grid.appendChild(card);
-            });
-            
-            document.getElementById('totalProjects').textContent = projects.length;
-            document.getElementById('totalViews').textContent = totalViews;
-        }
+    <div class="photo-stage reveal">
+      <div class="scene">
+        <div class="monitor-glow"></div>
+        <div class="desk-line"></div>
+        <div class="side-light"></div>
+        <div class="vignette"></div>
+      </div>
+      <div class="pulse-wrap">
+        <svg viewBox="0 0 200 200">
+          <circle class="pulse-ring" cx="100" cy="100" r="60"/>
+          <circle class="pulse-ring" cx="100" cy="100" r="60"/>
+          <circle class="pulse-ring" cx="100" cy="100" r="60"/>
+        </svg>
+      </div>
+      <div class="photo-mask" id="heroPhoto">
+        <img src="assets/foto-perfil.jpg" alt="Camilly Pinheiro" onerror="this.parentElement.classList.add('no-img')">
+      </div>
+    </div>
+  </div>
 
-        function incrementViews(index) {
-            projects[index].views = (projects[index].views || 0) + 1;
-            saveProjects();
-            renderProjects();
-        }
+  <div class="scroll-cue"><span data-i18n="hero.scroll">Scroll</span><div class="line"></div></div>
+</header>
 
-        function openModal() {
-            document.getElementById('projectModal').style.display = 'flex';
-        }
+<section id="about">
+  <div class="about-split">
+    <div class="about-photo-wrap" id="aboutPhoto">
+      <img src="assets/foto-perfil.jpg" alt="Camilly Pinheiro" onerror="this.parentElement.classList.add('no-img')">
+    </div>
+    <div class="about-content">
+      <div class="kicker reveal" data-i18n="about.kicker">01 / Sobre</div>
+      <h2 class="reveal" data-i18n="about.title">Da arquitetura ao insight.</h2>
+      <p class="reveal" data-i18n="about.p1">Sou Analytics &amp; Data Engineer com atuação em pipelines ELT/ETL, modelagem analítica e arquitetura Medallion — do dado bruto à decisão. Trabalho com dbt, BigQuery, SQL Server e Airflow para construir bases confiáveis, testadas e documentadas.</p>
+      <p class="reveal" data-i18n="about.p2">Amplio minha atuação para Machine Learning aplicado e boas práticas de segurança da informação, unindo engenharia, análise preditiva e proteção de dados em cada etapa do pipeline.</p>
+      <div class="about-meta reveal">
+        <div><b data-i18n="about.locLabel">Localização</b><span data-i18n="about.locValue">Home Office · Remoto</span></div>
+        <div><b data-i18n="about.expLabel">Experiência</b><span data-i18n="about.expValue">4+ anos em dados &amp; BI</span></div>
+        <div><b data-i18n="about.focusLabel">Foco</b><span data-i18n="about.focusValue">Dados · ML · Segurança</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        function closeModal() {
-            document.getElementById('projectModal').style.display = 'none';
-            document.getElementById('projectForm').reset();
-        }
+<section id="resume">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker" data-i18n="resume.kicker">02 / Resume</div>
+      <div class="section-title" data-i18n="resume.title">Organizada como uma arquitetura de dados.</div>
+    </div>
 
-        document.getElementById('projectForm').onsubmit = function(e) {
-            e.preventDefault();
-            
-            const newProject = {
-                title: document.getElementById('projectTitle').value,
-                description: document.getElementById('projectDescription').value,
-                image: document.getElementById('projectImage').value,
-                github: document.getElementById('projectGithub').value,
-                views: 0
-            };
-            
-            projects.push(newProject);
-            saveProjects();
-            renderProjects();
-            closeModal();
-        };
+    <div class="stat-strip reveal">
+      <div class="stat-card"><div class="stat-num">4+</div><div class="stat-label" data-i18n="resume.stat1">Anos em dados &amp; BI</div></div>
+      <div class="stat-card"><div class="stat-num">12+</div><div class="stat-label" data-i18n="resume.stat2">Pipelines em produção</div></div>
+      <div class="stat-card"><div class="stat-num">03</div><div class="stat-label" data-i18n="resume.stat3">Certificações &amp; pós</div></div>
+      <div class="stat-card"><div class="stat-num">01</div><div class="stat-label" data-i18n="resume.stat4">Foco em cybersecurity</div></div>
+    </div>
 
-        // Inicializar
-        createStars();
-        renderProjects();
+    <div class="resume-grid">
 
-        // Fechar modal ao clicar fora
-        window.onclick = function(event) {
-            const modal = document.getElementById('projectModal');
-            if (event.target === modal) {
-                closeModal();
-            }
-        };
-    </script>
+      <div class="resume-col">
+        <div class="block reveal">
+          <h3 class="col-title" data-i18n="resume.stackTitle">Stack técnica</h3>
+          <div class="skill-row"><div class="skill-top"><span>dbt Core / Cloud</span><span class="pct">92%</span></div><div class="skill-track"><div class="skill-fill" style="width:92%"></div></div></div>
+          <div class="skill-row"><div class="skill-top"><span>BigQuery</span><span class="pct">88%</span></div><div class="skill-track"><div class="skill-fill" style="width:88%"></div></div></div>
+          <div class="skill-row"><div class="skill-top"><span>SQL Server</span><span class="pct">90%</span></div><div class="skill-track"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill-row"><div class="skill-top"><span>Apache Airflow</span><span class="pct">80%</span></div><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div></div>
+          <div class="skill-row"><div class="skill-top"><span>Power BI · DAX</span><span class="pct">85%</span></div><div class="skill-track"><div class="skill-fill" style="width:85%"></div></div></div>
+          <div class="skill-row"><div class="skill-top"><span>Python (pandas, sklearn)</span><span class="pct">78%</span></div><div class="skill-track"><div class="skill-fill" style="width:78%"></div></div></div>
+        </div>
+
+        <div class="block reveal">
+          <h3 class="col-title" data-i18n="resume.techTitle">Tecnologias</h3>
+          <div class="tech-grid">
+            <div class="tech-item"><span class="tech-dot"></span>SQL Server</div>
+            <div class="tech-item"><span class="tech-dot"></span>Python</div>
+            <div class="tech-item"><span class="tech-dot"></span>Airflow</div>
+            <div class="tech-item"><span class="tech-dot"></span>Spark</div>
+            <div class="tech-item"><span class="tech-dot"></span>BigQuery</div>
+            <div class="tech-item"><span class="tech-dot"></span>Power BI</div>
+            <div class="tech-item"><span class="tech-dot"></span>dbt</div>
+            <div class="tech-item"><span class="tech-dot"></span>Docker</div>
+            <div class="tech-item"><span class="tech-dot"></span>Azure</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-col" id="experience" style="scroll-margin-top:100px;">
+        <h3 class="col-title reveal" data-i18n="resume.expTitle">Experiência profissional</h3>
+        <div class="timeline reveal">
+          <div class="tl-item">
+            <div class="period" data-i18n="resume.exp1.period">OUT 2024 — ATUAL</div>
+            <h3 data-i18n="resume.exp1.role">Analista de MIS Sênior — Planejamento &amp; BI</h3>
+            <div class="company">NEOHYPE</div>
+            <ul>
+              <li data-i18n="resume.exp1.li1">Projetou e implementou arquitetura Medallion no BigQuery (bronze → silver → gold), com controle de acesso e rastreabilidade entre camadas.</li>
+              <li data-i18n="resume.exp1.li2">Construiu pipelines ELT com dbt Core/Cloud usando tabelas incrementais e macros, reduzindo o custo de processamento em até 30%.</li>
+              <li data-i18n="resume.exp1.li3">Implementou testes automatizados de qualidade e documentação via dbt docs com lineage graph.</li>
+              <li data-i18n="resume.exp1.li4">Integrou SQL Server e BigQuery com stored procedures e views otimizadas.</li>
+              <li data-i18n="resume.exp1.li5">Orquestrou pipelines com Apache Airflow e ingeriu eventos em tempo real com Kafka + Databricks.</li>
+              <li data-i18n="resume.exp1.li6">Desenvolveu dashboards gerenciais em Power BI (DirectQuery + Import).</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="period" data-i18n="resume.exp2.period">2021 — 2024</div>
+            <h3 data-i18n="resume.exp2.role">Analista de Dados &amp; Fiscal</h3>
+            <div class="company">TELCA (PJ)</div>
+            <ul>
+              <li data-i18n="resume.exp2.li1">Desenvolveu relatórios e painéis analíticos para indicadores operacionais e financeiros.</li>
+              <li data-i18n="resume.exp2.li2">Automatizou rotinas de análise com Python e Google Sheets, reduzindo retrabalho em mais de 40%.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="block reveal">
+          <h3 class="col-title" data-i18n="resume.eduTitle">Formação acadêmica</h3>
+          <div class="edu-item">
+            <div class="fname" data-i18n="resume.edu1.name">Bacharelado em Engenharia de Dados</div>
+            <div class="fschool">Unicive</div>
+            <div class="fyear" data-i18n="resume.edu1.year">Previsão 2027</div>
+          </div>
+          <div class="edu-item">
+            <div class="fname" data-i18n="resume.edu2.name">MBA em Análise de Dados com Big Data</div>
+            <div class="fschool">FAVI</div>
+            <div class="fyear">2024</div>
+          </div>
+          <div class="edu-item">
+            <div class="fname" data-i18n="resume.edu3.name">Pós-Graduação em Gestão de Projetos e Metodologias Ágeis</div>
+            <div class="fschool">FAVI</div>
+            <div class="fyear">2024</div>
+          </div>
+          <div class="edu-item">
+            <div class="fname" data-i18n="resume.edu4.name">Tecnólogo em Redes de Computadores</div>
+            <div class="fschool">UNAMA</div>
+            <div class="fyear">2021–2023</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-col">
+        <div class="block reveal">
+          <h3 class="col-title" data-i18n="resume.doTitle">O que eu faço</h3>
+          <div class="tech-grid" style="grid-template-columns:1fr;">
+            <div class="tech-item"><span class="tech-dot"></span><span data-i18n="resume.do1">Arquitetura Medallion end-to-end</span></div>
+            <div class="tech-item"><span class="tech-dot"></span><span data-i18n="resume.do2">Pipelines ELT/ETL com testes automatizados</span></div>
+            <div class="tech-item"><span class="tech-dot"></span><span data-i18n="resume.do3">Dashboards e storytelling com dados</span></div>
+            <div class="tech-item"><span class="tech-dot"></span><span data-i18n="resume.do4">Modelos preditivos em Python</span></div>
+            <div class="tech-item"><span class="tech-dot"></span><span data-i18n="resume.do5">Boas práticas de segurança de dados</span></div>
+          </div>
+        </div>
+        <div class="block reveal">
+          <h3 class="col-title" data-i18n="resume.langTitle">Idiomas</h3>
+          <div class="skill-row"><div class="skill-top"><span data-i18n="resume.langPt">Português</span><span class="pct">100%</span></div><div class="skill-track"><div class="skill-fill" style="width:100%"></div></div></div>
+          <div class="skill-row"><div class="skill-top"><span data-i18n="resume.langEn">Inglês</span><span class="pct">65%</span></div><div class="skill-track"><div class="skill-fill" style="width:65%"></div></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="projetos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker" data-i18n="proj.kicker">03 / Portfolio</div>
+      <div class="section-title" data-i18n="proj.title">Do pipeline ao modelo.</div>
+    </div>
+
+    <div class="project-grid">
+      <div class="project-card reveal">
+        <div class="pnum" data-i18n="proj.p1.num">Orquestração · ELT</div>
+        <h3 data-i18n="proj.p1.title">Pipeline Airflow</h3>
+        <p data-i18n="proj.p1.desc">Orquestração de ingestão e transformação com Apache Airflow — DAGs modulares, retries e alertas, garantindo SLA de atualização para dados críticos.</p>
+        <div class="tag-row"><span class="chip">Airflow</span><span class="chip">Python</span><span class="chip">SQL Server</span></div>
+      </div>
+      <div class="project-card reveal">
+        <div class="pnum" data-i18n="proj.p2.num">Business Intelligence</div>
+        <h3 data-i18n="proj.p2.title">Dashboard Power BI</h3>
+        <p data-i18n="proj.p2.desc">Dashboards executivos com DirectQuery e modelagem em DAX, consolidando KPIs operacionais e financeiros em uma única fonte de verdade.</p>
+        <div class="tag-row"><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">BigQuery</span></div>
+      </div>
+      <div class="project-card reveal">
+        <div class="pnum" data-i18n="proj.p3.num">Machine Learning</div>
+        <h3 data-i18n="proj.p3.title">Projeto Machine Learning</h3>
+        <p data-i18n="proj.p3.desc">Modelo de regressão para previsão de preços de imóveis com scikit-learn, avaliado por MSE e validado com visualizações em Matplotlib.</p>
+        <div class="tag-row"><span class="chip">Python</span><span class="chip">scikit-learn</span><span class="chip">pandas</span></div>
+      </div>
+      <div class="project-card reveal">
+        <div class="pnum" data-i18n="proj.p4.num">Automação · RPA</div>
+        <h3 data-i18n="proj.p4.title">Automação</h3>
+        <p data-i18n="proj.p4.desc">Robô em Python para consulta e integração de dados de crédito, reduzindo o tempo de processamento manual e padronizando o retorno para as camadas analíticas.</p>
+        <div class="tag-row"><span class="chip">Python</span><span class="chip">RPA</span><span class="chip">ETL</span></div>
+      </div>
+      <div class="project-card reveal">
+        <div class="pnum" data-i18n="proj.p5.num">Arquitetura Medallion</div>
+        <h3 data-i18n="proj.p5.title">Data Warehouse</h3>
+        <p data-i18n="proj.p5.desc">Modelagem em camadas bronze → silver → gold no BigQuery, com testes automatizados, lineage documentado via dbt docs e governança de acesso.</p>
+        <div class="tag-row"><span class="chip">dbt</span><span class="chip">BigQuery</span><span class="chip">SQL Server</span></div>
+      </div>
+      <div class="project-card reveal">
+        <div class="pnum" data-i18n="proj.p6.num">Observabilidade</div>
+        <h3 data-i18n="proj.p6.title">Monitor ETL</h3>
+        <p data-i18n="proj.p6.desc">Painel de monitoramento de jobs ETL com alertas de falha, métricas de execução e volumetria, elevando a confiabilidade da esteira de dados.</p>
+        <div class="tag-row"><span class="chip">Airflow</span><span class="chip">Python</span><span class="chip">Power BI</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contato">
+  <div class="wrap">
+    <div class="kicker reveal" data-i18n="footer.kicker">Contato</div>
+    <div class="contact-title reveal" data-i18n="footer.title">Pronta para transformar dados brutos em decisões confiáveis.</div>
+    <div class="contact-links reveal">
+      <a class="btn btn-primary" href="mailto:camilly2victoria@gmail.com">camilly2victoria@gmail.com</a>
+      <a class="btn btn-ghost" href="tel:+5591983530368">+55 (91) 9 8353-0368</a>
+      <a class="btn btn-ghost" href="https://github.com/CamyVick/Camilly-Pinheiro" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/camilly-pinheiro-dados" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+    <div class="foot-meta">
+      <span data-i18n="footer.remote">Home Office · Remoto</span>
+      <span data-i18n="footer.flow">bronze → silver → gold → decisão</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---------- I18N ----------
+  const translations = {
+    "nav.home":{pt:"Início",en:"Home",es:"Inicio",fr:"Accueil",de:"Start"},
+    "nav.about":{pt:"Sobre",en:"About",es:"Acerca de",fr:"À propos",de:"Über mich"},
+    "nav.resume":{pt:"Currículo",en:"Resume",es:"Currículo",fr:"CV",de:"Lebenslauf"},
+    "nav.projects":{pt:"Projetos",en:"Projects",es:"Proyectos",fr:"Projets",de:"Projekte"},
+    "nav.experience":{pt:"Experiência",en:"Experience",es:"Experiencia",fr:"Expérience",de:"Erfahrung"},
+    "nav.contact":{pt:"Contato",en:"Contact",es:"Contacto",fr:"Contact",de:"Kontakt"},
+
+    "hero.eyebrow":{pt:"Engenharia de Dados · Cibersegurança · ML",en:"Data Engineering · Cybersecurity · ML",es:"Ingeniería de Datos · Ciberseguridad · ML",fr:"Ingénierie des Données · Cybersécurité · ML",de:"Data Engineering · Cybersicherheit · ML"},
+    "hero.role1":{pt:"Engenheira de Dados",en:"Data Engineer",es:"Ingeniera de Datos",fr:"Ingénieure Data",de:"Data Engineerin"},
+    "hero.role2":{pt:"Analytics",en:"Analytics",es:"Analítica",fr:"Analytique",de:"Analytics"},
+    "hero.role3":{pt:"Machine Learning",en:"Machine Learning",es:"Machine Learning",fr:"Machine Learning",de:"Machine Learning"},
+    "hero.role4":{pt:"Cibersegurança",en:"Cybersecurity",es:"Ciberseguridad",fr:"Cybersécurité",de:"Cybersicherheit"},
+    "hero.lede":{pt:"Transformando dados em decisões através de pipelines escaláveis, automação e arquitetura moderna de dados.",en:"Turning data into decisions through scalable pipelines, automation, and modern data architecture.",es:"Transformando datos en decisiones mediante pipelines escalables, automatización y arquitectura de datos moderna.",fr:"Transformer les données en décisions grâce à des pipelines évolutifs, l'automatisation et une architecture de données moderne.",de:"Daten in Entscheidungen verwandeln – durch skalierbare Pipelines, Automatisierung und moderne Datenarchitektur."},
+    "hero.btnResume":{pt:"Currículo",en:"Resume",es:"Currículo",fr:"CV",de:"Lebenslauf"},
+    "hero.btnPortfolio":{pt:"Portfólio",en:"Portfolio",es:"Portafolio",fr:"Portfolio",de:"Portfolio"},
+    "hero.scroll":{pt:"Rolar",en:"Scroll",es:"Desplazar",fr:"Défiler",de:"Scrollen"},
+
+    "about.kicker":{pt:"01 / Sobre",en:"01 / About",es:"01 / Acerca de",fr:"01 / À propos",de:"01 / Über mich"},
+    "about.title":{pt:"Da arquitetura ao insight.",en:"From architecture to insight.",es:"De la arquitectura al insight.",fr:"De l'architecture à l'insight.",de:"Von der Architektur zum Insight."},
+    "about.p1":{pt:"Sou Analytics &amp; Data Engineer com atuação em pipelines ELT/ETL, modelagem analítica e arquitetura Medallion — do dado bruto à decisão. Trabalho com dbt, BigQuery, SQL Server e Airflow para construir bases confiáveis, testadas e documentadas.",en:"I'm an Analytics &amp; Data Engineer working with ELT/ETL pipelines, analytical modeling, and Medallion architecture — from raw data to decisions. I work with dbt, BigQuery, SQL Server, and Airflow to build reliable, tested, and documented data foundations.",es:"Soy Analytics &amp; Data Engineer, trabajo con pipelines ELT/ETL, modelado analítico y arquitectura Medallion — del dato bruto a la decisión. Trabajo con dbt, BigQuery, SQL Server y Airflow para construir bases de datos confiables, probadas y documentadas.",fr:"Je suis Analytics &amp; Data Engineer, spécialisée dans les pipelines ELT/ETL, la modélisation analytique et l'architecture Medallion — de la donnée brute à la décision. Je travaille avec dbt, BigQuery, SQL Server et Airflow pour construire des bases fiables, testées et documentées.",de:"Ich bin Analytics &amp; Data Engineer und arbeite mit ELT/ETL-Pipelines, analytischer Modellierung und Medallion-Architektur — von Rohdaten bis zur Entscheidung. Ich nutze dbt, BigQuery, SQL Server und Airflow, um zuverlässige, getestete und dokumentierte Datenbasen aufzubauen."},
+    "about.p2":{pt:"Amplio minha atuação para Machine Learning aplicado e boas práticas de segurança da informação, unindo engenharia, análise preditiva e proteção de dados em cada etapa do pipeline.",en:"I'm expanding into applied Machine Learning and information security best practices, combining engineering, predictive analysis, and data protection at every stage of the pipeline.",es:"Amplío mi actuación hacia Machine Learning aplicado y buenas prácticas de seguridad de la información, uniendo ingeniería, análisis predictivo y protección de datos en cada etapa del pipeline.",fr:"J'élargis mon champ d'action au Machine Learning appliqué et aux bonnes pratiques de sécurité de l'information, en combinant ingénierie, analyse prédictive et protection des données à chaque étape du pipeline.",de:"Ich erweitere mein Tätigkeitsfeld um angewandtes Machine Learning und Best Practices der Informationssicherheit und verbinde Engineering, prädiktive Analyse und Datenschutz in jeder Phase der Pipeline."},
+    "about.locLabel":{pt:"Localização",en:"Location",es:"Ubicación",fr:"Localisation",de:"Standort"},
+    "about.locValue":{pt:"Home Office · Remoto",en:"Home Office · Remote",es:"Home Office · Remoto",fr:"Télétravail · À distance",de:"Home-Office · Remote"},
+    "about.expLabel":{pt:"Experiência",en:"Experience",es:"Experiencia",fr:"Expérience",de:"Erfahrung"},
+    "about.expValue":{pt:"4+ anos em dados &amp; BI",en:"4+ years in data &amp; BI",es:"4+ años en datos y BI",fr:"4+ ans en data &amp; BI",de:"4+ Jahre in Daten &amp; BI"},
+    "about.focusLabel":{pt:"Foco",en:"Focus",es:"Enfoque",fr:"Focus",de:"Fokus"},
+    "about.focusValue":{pt:"Dados · ML · Segurança",en:"Data · ML · Security",es:"Datos · ML · Seguridad",fr:"Données · ML · Sécurité",de:"Daten · ML · Sicherheit"},
+
+    "resume.kicker":{pt:"02 / Currículo",en:"02 / Resume",es:"02 / Currículo",fr:"02 / CV",de:"02 / Lebenslauf"},
+    "resume.title":{pt:"Organizada como uma arquitetura de dados.",en:"Organized like a data architecture.",es:"Organizada como una arquitectura de datos.",fr:"Organisée comme une architecture de données.",de:"Organisiert wie eine Datenarchitektur."},
+    "resume.stat1":{pt:"Anos em dados &amp; BI",en:"Years in data &amp; BI",es:"Años en datos y BI",fr:"Ans en data &amp; BI",de:"Jahre in Daten &amp; BI"},
+    "resume.stat2":{pt:"Pipelines em produção",en:"Pipelines in production",es:"Pipelines en producción",fr:"Pipelines en production",de:"Pipelines in Produktion"},
+    "resume.stat3":{pt:"Certificações &amp; pós",en:"Certifications &amp; grad courses",es:"Certificaciones y posgrados",fr:"Certifications &amp; formations",de:"Zertifizierungen &amp; Weiterbildungen"},
+    "resume.stat4":{pt:"Foco em cybersecurity",en:"Focus on cybersecurity",es:"Enfoque en ciberseguridad",fr:"Focus cybersécurité",de:"Fokus auf Cybersicherheit"},
+    "resume.stackTitle":{pt:"Stack técnica",en:"Technical stack",es:"Stack técnico",fr:"Stack technique",de:"Technischer Stack"},
+    "resume.techTitle":{pt:"Tecnologias",en:"Technologies",es:"Tecnologías",fr:"Technologies",de:"Technologien"},
+    "resume.expTitle":{pt:"Experiência profissional",en:"Professional experience",es:"Experiencia profesional",fr:"Expérience professionnelle",de:"Berufserfahrung"},
+
+    "resume.exp1.period":{pt:"OUT 2024 — ATUAL",en:"OCT 2024 — PRESENT",es:"OCT 2024 — ACTUAL",fr:"OCT 2024 — PRÉSENT",de:"OKT 2024 — HEUTE"},
+    "resume.exp1.role":{pt:"Analista de MIS Sênior — Planejamento &amp; BI",en:"Senior MIS Analyst — Planning &amp; BI",es:"Analista de MIS Sénior — Planificación y BI",fr:"Analyste MIS Senior — Planification &amp; BI",de:"Senior MIS-Analystin — Planung &amp; BI"},
+    "resume.exp1.li1":{pt:"Projetou e implementou arquitetura Medallion no BigQuery (bronze → silver → gold), com controle de acesso e rastreabilidade entre camadas.",en:"Designed and implemented Medallion architecture on BigQuery (bronze → silver → gold), with access control and traceability across layers.",es:"Diseñó e implementó arquitectura Medallion en BigQuery (bronze → silver → gold), con control de acceso y trazabilidad entre capas.",fr:"Conception et mise en œuvre d'une architecture Medallion sur BigQuery (bronze → silver → gold), avec contrôle d'accès et traçabilité entre les couches.",de:"Entwarf und implementierte eine Medallion-Architektur in BigQuery (Bronze → Silver → Gold) mit Zugriffskontrolle und Rückverfolgbarkeit zwischen den Schichten."},
+    "resume.exp1.li2":{pt:"Construiu pipelines ELT com dbt Core/Cloud usando tabelas incrementais e macros, reduzindo o custo de processamento em até 30%.",en:"Built ELT pipelines with dbt Core/Cloud using incremental tables and macros, cutting processing costs by up to 30%.",es:"Construyó pipelines ELT con dbt Core/Cloud usando tablas incrementales y macros, reduciendo el costo de procesamiento hasta un 30%.",fr:"Construction de pipelines ELT avec dbt Core/Cloud à l'aide de tables incrémentales et de macros, réduisant les coûts de traitement jusqu'à 30 %.",de:"Baute ELT-Pipelines mit dbt Core/Cloud unter Verwendung inkrementeller Tabellen und Makros auf und senkte die Verarbeitungskosten um bis zu 30 %."},
+    "resume.exp1.li3":{pt:"Implementou testes automatizados de qualidade e documentação via dbt docs com lineage graph.",en:"Implemented automated quality tests and documentation via dbt docs with lineage graph.",es:"Implementó pruebas automatizadas de calidad y documentación mediante dbt docs con gráfico de linaje.",fr:"Mise en place de tests de qualité automatisés et de documentation via dbt docs avec graphe de lineage.",de:"Implementierte automatisierte Qualitätstests und Dokumentation über dbt docs mit Lineage-Graph."},
+    "resume.exp1.li4":{pt:"Integrou SQL Server e BigQuery com stored procedures e views otimizadas.",en:"Integrated SQL Server and BigQuery with stored procedures and optimized views.",es:"Integró SQL Server y BigQuery con stored procedures y vistas optimizadas.",fr:"Intégration de SQL Server et BigQuery avec des procédures stockées et des vues optimisées.",de:"Integrierte SQL Server und BigQuery mit Stored Procedures und optimierten Views."},
+    "resume.exp1.li5":{pt:"Orquestrou pipelines com Apache Airflow e ingeriu eventos em tempo real com Kafka + Databricks.",en:"Orchestrated pipelines with Apache Airflow and ingested real-time events with Kafka + Databricks.",es:"Orquestó pipelines con Apache Airflow e ingirió eventos en tiempo real con Kafka + Databricks.",fr:"Orchestration des pipelines avec Apache Airflow et ingestion d'événements en temps réel avec Kafka + Databricks.",de:"Orchestrierte Pipelines mit Apache Airflow und erfasste Echtzeitereignisse mit Kafka + Databricks."},
+    "resume.exp1.li6":{pt:"Desenvolveu dashboards gerenciais em Power BI (DirectQuery + Import).",en:"Developed management dashboards in Power BI (DirectQuery + Import).",es:"Desarrolló dashboards gerenciales en Power BI (DirectQuery + Import).",fr:"Développement de tableaux de bord de gestion dans Power BI (DirectQuery + Import).",de:"Entwickelte Management-Dashboards in Power BI (DirectQuery + Import)."},
+
+    "resume.exp2.period":{pt:"2021 — 2024",en:"2021 — 2024",es:"2021 — 2024",fr:"2021 — 2024",de:"2021 — 2024"},
+    "resume.exp2.role":{pt:"Analista de Dados &amp; Fiscal",en:"Data &amp; Tax Analyst",es:"Analista de Datos y Fiscal",fr:"Analyste Données &amp; Fiscalité",de:"Daten- &amp; Steueranalystin"},
+    "resume.exp2.li1":{pt:"Desenvolveu relatórios e painéis analíticos para indicadores operacionais e financeiros.",en:"Developed reports and analytical dashboards for operational and financial indicators.",es:"Desarrolló informes y paneles analíticos para indicadores operativos y financieros.",fr:"Développement de rapports et de tableaux de bord analytiques pour les indicateurs opérationnels et financiers.",de:"Entwickelte Berichte und Analyse-Dashboards für operative und finanzielle Kennzahlen."},
+    "resume.exp2.li2":{pt:"Automatizou rotinas de análise com Python e Google Sheets, reduzindo retrabalho em mais de 40%.",en:"Automated analysis routines with Python and Google Sheets, reducing rework by more than 40%.",es:"Automatizó rutinas de análisis con Python y Google Sheets, reduciendo el retrabajo en más de un 40%.",fr:"Automatisation des routines d'analyse avec Python et Google Sheets, réduisant les reprises de plus de 40 %.",de:"Automatisierte Analyseroutinen mit Python und Google Sheets und reduzierte Nacharbeit um mehr als 40 %."},
+
+    "resume.eduTitle":{pt:"Formação acadêmica",en:"Education",es:"Formación académica",fr:"Formation académique",de:"Ausbildung"},
+    "resume.edu1.name":{pt:"Bacharelado em Engenharia de Dados",en:"Bachelor's in Data Engineering",es:"Licenciatura en Ingeniería de Datos",fr:"Licence en Ingénierie des Données",de:"Bachelor in Data Engineering"},
+    "resume.edu1.year":{pt:"Previsão 2027",en:"Expected 2027",es:"Previsto 2027",fr:"Prévu 2027",de:"Voraussichtlich 2027"},
+    "resume.edu2.name":{pt:"MBA em Análise de Dados com Big Data",en:"MBA in Data Analysis with Big Data",es:"MBA en Análisis de Datos con Big Data",fr:"MBA en Analyse de Données et Big Data",de:"MBA in Datenanalyse mit Big Data"},
+    "resume.edu3.name":{pt:"Pós-Graduação em Gestão de Projetos e Metodologias Ágeis",en:"Postgraduate in Project Management and Agile Methodologies",es:"Posgrado en Gestión de Proyectos y Metodologías Ágiles",fr:"Post-diplôme en Gestion de Projets et Méthodologies Agiles",de:"Postgraduiertenprogramm in Projektmanagement und agilen Methoden"},
+    "resume.edu4.name":{pt:"Tecnólogo em Redes de Computadores",en:"Associate Degree in Computer Networking",es:"Tecnólogo en Redes de Computadoras",fr:"Diplôme technique en Réseaux Informatiques",de:"Fachhochschulabschluss in Computernetzwerken"},
+
+    "resume.doTitle":{pt:"O que eu faço",en:"What I do",es:"Lo que hago",fr:"Ce que je fais",de:"Was ich mache"},
+    "resume.do1":{pt:"Arquitetura Medallion end-to-end",en:"End-to-end Medallion architecture",es:"Arquitectura Medallion end-to-end",fr:"Architecture Medallion de bout en bout",de:"End-to-End Medallion-Architektur"},
+    "resume.do2":{pt:"Pipelines ELT/ETL com testes automatizados",en:"ELT/ETL pipelines with automated testing",es:"Pipelines ELT/ETL con pruebas automatizadas",fr:"Pipelines ELT/ETL avec tests automatisés",de:"ELT/ETL-Pipelines mit automatisierten Tests"},
+    "resume.do3":{pt:"Dashboards e storytelling com dados",en:"Dashboards and data storytelling",es:"Dashboards y storytelling con datos",fr:"Tableaux de bord et storytelling de données",de:"Dashboards und Data Storytelling"},
+    "resume.do4":{pt:"Modelos preditivos em Python",en:"Predictive models in Python",es:"Modelos predictivos en Python",fr:"Modèles prédictifs en Python",de:"Prädiktive Modelle in Python"},
+    "resume.do5":{pt:"Boas práticas de segurança de dados",en:"Data security best practices",es:"Buenas prácticas de seguridad de datos",fr:"Bonnes pratiques de sécurité des données",de:"Best Practices für Datensicherheit"},
+
+    "resume.langTitle":{pt:"Idiomas",en:"Languages",es:"Idiomas",fr:"Langues",de:"Sprachen"},
+    "resume.langPt":{pt:"Português",en:"Portuguese",es:"Portugués",fr:"Portugais",de:"Portugiesisch"},
+    "resume.langEn":{pt:"Inglês",en:"English",es:"Inglés",fr:"Anglais",de:"Englisch"},
+
+    "proj.kicker":{pt:"03 / Portfólio",en:"03 / Portfolio",es:"03 / Portafolio",fr:"03 / Portfolio",de:"03 / Portfolio"},
+    "proj.title":{pt:"Do pipeline ao modelo.",en:"From pipeline to model.",es:"Del pipeline al modelo.",fr:"Du pipeline au modèle.",de:"Von der Pipeline zum Modell."},
+
+    "proj.p1.num":{pt:"Orquestração · ELT",en:"Orchestration · ELT",es:"Orquestación · ELT",fr:"Orchestration · ELT",de:"Orchestrierung · ELT"},
+    "proj.p1.title":{pt:"Pipeline Airflow",en:"Airflow Pipeline",es:"Pipeline Airflow",fr:"Pipeline Airflow",de:"Airflow-Pipeline"},
+    "proj.p1.desc":{pt:"Orquestração de ingestão e transformação com Apache Airflow — DAGs modulares, retries e alertas, garantindo SLA de atualização para dados críticos.",en:"Ingestion and transformation orchestration with Apache Airflow — modular DAGs, retries, and alerts, ensuring update SLAs for critical data.",es:"Orquestación de ingesta y transformación con Apache Airflow — DAGs modulares, reintentos y alertas, garantizando el SLA de actualización para datos críticos.",fr:"Orchestration de l'ingestion et de la transformation avec Apache Airflow — DAGs modulaires, réessais et alertes, garantissant le SLA de mise à jour pour les données critiques.",de:"Orchestrierung von Ingestion und Transformation mit Apache Airflow — modulare DAGs, Wiederholungsversuche und Warnungen, um SLAs für kritische Daten sicherzustellen."},
+
+    "proj.p2.num":{pt:"Business Intelligence",en:"Business Intelligence",es:"Business Intelligence",fr:"Business Intelligence",de:"Business Intelligence"},
+    "proj.p2.title":{pt:"Dashboard Power BI",en:"Power BI Dashboard",es:"Dashboard Power BI",fr:"Tableau de bord Power BI",de:"Power-BI-Dashboard"},
+    "proj.p2.desc":{pt:"Dashboards executivos com DirectQuery e modelagem em DAX, consolidando KPIs operacionais e financeiros em uma única fonte de verdade.",en:"Executive dashboards with DirectQuery and DAX modeling, consolidating operational and financial KPIs into a single source of truth.",es:"Dashboards ejecutivos con DirectQuery y modelado en DAX, consolidando KPIs operativos y financieros en una única fuente de verdad.",fr:"Tableaux de bord exécutifs avec DirectQuery et modélisation DAX, consolidant les KPI opérationnels et financiers en une source unique de vérité.",de:"Executive-Dashboards mit DirectQuery und DAX-Modellierung, die operative und finanzielle KPIs in einer einzigen verlässlichen Quelle zusammenführen."},
+
+    "proj.p3.num":{pt:"Machine Learning",en:"Machine Learning",es:"Machine Learning",fr:"Machine Learning",de:"Machine Learning"},
+    "proj.p3.title":{pt:"Projeto Machine Learning",en:"Machine Learning Project",es:"Proyecto Machine Learning",fr:"Projet Machine Learning",de:"Machine-Learning-Projekt"},
+    "proj.p3.desc":{pt:"Modelo de regressão para previsão de preços de imóveis com scikit-learn, avaliado por MSE e validado com visualizações em Matplotlib.",en:"Regression model for real estate price prediction with scikit-learn, evaluated using MSE and validated with Matplotlib visualizations.",es:"Modelo de regresión para predicción de precios de inmuebles con scikit-learn, evaluado mediante MSE y validado con visualizaciones en Matplotlib.",fr:"Modèle de régression pour la prédiction des prix immobiliers avec scikit-learn, évalué par MSE et validé avec des visualisations Matplotlib.",de:"Regressionsmodell zur Vorhersage von Immobilienpreisen mit scikit-learn, bewertet mittels MSE und validiert mit Matplotlib-Visualisierungen."},
+
+    "proj.p4.num":{pt:"Automação · RPA",en:"Automation · RPA",es:"Automatización · RPA",fr:"Automatisation · RPA",de:"Automatisierung · RPA"},
+    "proj.p4.title":{pt:"Automação",en:"Automation",es:"Automatización",fr:"Automatisation",de:"Automatisierung"},
+    "proj.p4.desc":{pt:"Robô em Python para consulta e integração de dados de crédito, reduzindo o tempo de processamento manual e padronizando o retorno para as camadas analíticas.",en:"Python-based bot for querying and integrating credit data, reducing manual processing time and standardizing output for analytical layers.",es:"Robot en Python para consulta e integración de datos de crédito, reduciendo el tiempo de procesamiento manual y estandarizando el retorno para las capas analíticas.",fr:"Robot en Python pour la consultation et l'intégration de données de crédit, réduisant le temps de traitement manuel et standardisant les résultats pour les couches analytiques.",de:"Python-Bot zur Abfrage und Integration von Kreditdaten, der die manuelle Bearbeitungszeit reduziert und die Ausgabe für die Analyseebenen standardisiert."},
+
+    "proj.p5.num":{pt:"Arquitetura Medallion",en:"Medallion Architecture",es:"Arquitectura Medallion",fr:"Architecture Medallion",de:"Medallion-Architektur"},
+    "proj.p5.title":{pt:"Data Warehouse",en:"Data Warehouse",es:"Data Warehouse",fr:"Data Warehouse",de:"Data Warehouse"},
+    "proj.p5.desc":{pt:"Modelagem em camadas bronze → silver → gold no BigQuery, com testes automatizados, lineage documentado via dbt docs e governança de acesso.",en:"Layered bronze → silver → gold modeling in BigQuery, with automated tests, lineage documented via dbt docs, and access governance.",es:"Modelado en capas bronze → silver → gold en BigQuery, con pruebas automatizadas, lineage documentado vía dbt docs y gobernanza de acceso.",fr:"Modélisation en couches bronze → silver → gold dans BigQuery, avec tests automatisés, lineage documenté via dbt docs et gouvernance des accès.",de:"Schichtenmodellierung Bronze → Silver → Gold in BigQuery, mit automatisierten Tests, über dbt docs dokumentiertem Lineage und Zugriffsverwaltung."},
+
+    "proj.p6.num":{pt:"Observabilidade",en:"Observability",es:"Observabilidad",fr:"Observabilité",de:"Observability"},
+    "proj.p6.title":{pt:"Monitor ETL",en:"ETL Monitor",es:"Monitor ETL",fr:"Moniteur ETL",de:"ETL-Monitor"},
+    "proj.p6.desc":{pt:"Painel de monitoramento de jobs ETL com alertas de falha, métricas de execução e volumetria, elevando a confiabilidade da esteira de dados.",en:"ETL job monitoring dashboard with failure alerts, execution metrics, and volume tracking, increasing the reliability of the data pipeline.",es:"Panel de monitoreo de jobs ETL con alertas de fallos, métricas de ejecución y volumetría, elevando la confiabilidad del flujo de datos.",fr:"Tableau de bord de surveillance des jobs ETL avec alertes d'échec, métriques d'exécution et volumétrie, augmentant la fiabilité du pipeline de données.",de:"ETL-Job-Monitoring-Dashboard mit Fehlerwarnungen, Ausführungsmetriken und Volumenüberwachung, das die Zuverlässigkeit der Datenpipeline erhöht."},
+
+    "footer.kicker":{pt:"Contato",en:"Contact",es:"Contacto",fr:"Contact",de:"Kontakt"},
+    "footer.title":{pt:"Pronta para transformar dados brutos em decisões confiáveis.",en:"Ready to turn raw data into reliable decisions.",es:"Lista para transformar datos brutos en decisiones confiables.",fr:"Prête à transformer des données brutes en décisions fiables.",de:"Bereit, Rohdaten in verlässliche Entscheidungen zu verwandeln."},
+    "footer.remote":{pt:"Home Office · Remoto",en:"Home Office · Remote",es:"Home Office · Remoto",fr:"Télétravail · À distance",de:"Home-Office · Remote"},
+    "footer.flow":{pt:"bronze → silver → gold → decisão",en:"bronze → silver → gold → decision",es:"bronze → silver → gold → decisión",fr:"bronze → silver → gold → décision",de:"bronze → silver → gold → Entscheidung"}
+  };
+
+  const htmlLangMap = {pt:"pt-BR", en:"en", es:"es", fr:"fr", de:"de"};
+  let currentLang = "pt";
+
+  function applyLang(lang){
+    if(!htmlLangMap[lang]) return;
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      const entry = translations[key];
+      if(entry && entry[lang] !== undefined){
+        el.innerHTML = entry[lang];
+      }
+    });
+    document.documentElement.lang = htmlLangMap[lang];
+    const btnLabel = document.getElementById("langBtnLabel");
+    if(btnLabel) btnLabel.textContent = lang.toUpperCase();
+    document.querySelectorAll(".lang-option").forEach(o => o.classList.toggle("active", o.dataset.lang === lang));
+    document.querySelectorAll(".mobile-lang button").forEach(b => b.classList.toggle("active", b.dataset.lang === lang));
+    currentLang = lang;
+  }
+
+  // dropdown toggle (desktop)
+  const langSwitch = document.getElementById("langSwitch");
+  const langBtn = document.getElementById("langBtn");
+  if(langBtn){
+    langBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = langSwitch.classList.toggle("open");
+      langBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  }
+  document.addEventListener("click", (e) => {
+    if(langSwitch && !langSwitch.contains(e.target)) langSwitch.classList.remove("open");
+  });
+  document.querySelectorAll(".lang-option").forEach(opt => {
+    opt.addEventListener("click", () => {
+      applyLang(opt.dataset.lang);
+      langSwitch.classList.remove("open");
+    });
+  });
+  document.querySelectorAll(".mobile-lang button").forEach(btn => {
+    btn.addEventListener("click", () => applyLang(btn.dataset.lang));
+  });
+
+  applyLang("pt");
+
+  // nav scroll state
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, {passive:true});
+
+  // mobile menu
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  navToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  // reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.15});
+  revealEls.forEach(el => io.observe(el));
+
+  // ambient particles
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    const count = window.innerWidth < 640 ? 8 : 16;
+    for(let i=0;i<count;i++){
+      const p = document.createElement('div');
+      p.className = 'particle';
+      const size = 1 + Math.random()*2;
+      p.style.width = size+'px';
+      p.style.height = size+'px';
+      p.style.left = Math.random()*100+'vw';
+      p.style.top = 100+Math.random()*20+'vh';
+      p.style.animationDuration = (14+Math.random()*16)+'s';
+      p.style.animationDelay = (Math.random()*14)+'s';
+      document.body.appendChild(p);
+    }
+  }
+
+  // subtle spotlight follow on project cards
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--gx', ((e.clientX-r.left)/r.width*100)+'%');
+      card.style.setProperty('--gy', ((e.clientY-r.top)/r.height*100)+'%');
+    });
+  });
+</script>
+
 </body>
 </html>
