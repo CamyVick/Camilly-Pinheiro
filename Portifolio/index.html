@@ -5,6 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Camilly Pinheiro · Data Engineer &amp; Cybersecurity</title>
 <meta name="description" content="Camilly Pinheiro — Data Engineer, Analytics, Machine Learning e Cybersecurity. Pipelines escaláveis, arquitetura moderna de dados e decisões orientadas por dados.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<meta name="theme-color" content="#050816">
+
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Camilly Pinheiro · Data Engineer & Cybersecurity">
+<meta property="og:description" content="Data Engineer, Analytics, Machine Learning e Cybersecurity. Pipelines escaláveis, arquitetura moderna de dados e decisões orientadas por dados.">
+<meta property="og:image" content="assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Camilly Pinheiro · Data Engineer & Cybersecurity">
+<meta name="twitter:description" content="Data Engineer, Analytics, Machine Learning e Cybersecurity. Pipelines escaláveis e arquitetura moderna de dados.">
+<meta name="twitter:image" content="assets/og-image.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -31,12 +53,14 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
+html{overflow-x:hidden;max-width:100%;}
 body{
   background:var(--void);
   color:var(--ink);
   font-family:var(--body);
   line-height:1.6;
   overflow-x:hidden;
+  max-width:100%;
   -webkit-font-smoothing:antialiased;
 }
 ::selection{background:var(--accent-30);color:#fff;}
@@ -74,12 +98,40 @@ img{max-width:100%;display:block;}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease), transform .9s var(--ease);}
 .reveal.in{opacity:1;transform:translateY(0);}
 
+/* ---------- PROGRESS BAR ---------- */
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;z-index:300;
+  background:linear-gradient(90deg,var(--accent-deep),var(--accent));
+  box-shadow:0 0 10px rgba(63,169,245,.6);transition:width .1s linear;}
+
+/* ---------- BACK TO TOP ---------- */
+.back-to-top{position:fixed;right:24px;bottom:24px;width:46px;height:46px;border-radius:50%;
+  background:var(--panel);border:1px solid var(--ink-14);color:var(--ink-70);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:190;
+  opacity:0;transform:translateY(12px);pointer-events:none;
+  transition:opacity .3s var(--ease), transform .3s var(--ease), border-color .25s ease, color .25s ease, background .25s ease;
+  box-shadow:0 10px 30px -10px rgba(0,0,0,.5);}
+.back-to-top.show{opacity:1;transform:translateY(0);pointer-events:auto;}
+.back-to-top:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-14);}
+.back-to-top svg{width:18px;height:18px;}
+@media (max-width:640px){.back-to-top{right:16px;bottom:16px;width:42px;height:42px;}}
+
+/* ---------- COPY EMAIL ---------- */
+.copy-email{position:relative;}
+.copy-email .copy-icon{display:inline-flex;align-items:center;justify-content:center;
+  width:18px;height:18px;margin-left:2px;flex-shrink:0;}
+.copy-email .copy-icon svg{width:100%;height:100%;}
+.copy-email .copy-toast{position:absolute;left:50%;bottom:calc(100% + 10px);transform:translateX(-50%) translateY(4px);
+  background:var(--elevated);color:var(--ink);font-family:var(--mono);font-size:11px;letter-spacing:.5px;
+  padding:6px 12px;border-radius:6px;border:1px solid var(--accent-30);white-space:nowrap;
+  opacity:0;pointer-events:none;transition:opacity .22s ease, transform .22s ease;}
+.copy-email .copy-toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
 /* ---------- NAV ---------- */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s ease, border-color .4s ease, backdrop-filter .4s ease;
   border-bottom:1px solid transparent;}
 nav.scrolled{background:rgba(5,8,22,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--ink-08);}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px;}
-.brand{font-family:var(--mono);font-size:14px;letter-spacing:1.5px;color:var(--ink);display:flex;align-items:center;gap:9px;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px;gap:12px;}
+.brand{font-family:var(--mono);font-size:14px;letter-spacing:1.5px;color:var(--ink);display:flex;align-items:center;gap:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;}
 .brand .pip{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);}
 .navlinks{display:flex;gap:34px;font-family:var(--mono);font-size:12.5px;letter-spacing:.5px;color:var(--ink-50);}
 .navlinks a{position:relative;padding:4px 0;transition:color .25s ease;}
@@ -141,7 +193,8 @@ nav.scrolled{background:rgba(5,8,22,.72);backdrop-filter:blur(14px);border-botto
 .hero-lede{max-width:560px;color:var(--ink-70);font-size:17px;margin-top:24px;font-weight:400;}
 .hero-actions{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap;}
 .btn{font-family:var(--mono);font-size:13px;letter-spacing:.5px;padding:14px 28px;border-radius:8px;
-  border:1px solid var(--ink-14);transition:all .3s var(--ease);display:inline-flex;align-items:center;gap:9px;}
+  border:1px solid var(--ink-14);transition:all .3s var(--ease);display:inline-flex;align-items:center;gap:9px;
+  background:transparent;cursor:pointer;line-height:1.2;}
 .btn-primary{background:var(--accent);color:var(--void);font-weight:600;border:none;box-shadow:0 0 0 rgba(63,169,245,0);}
 .btn-primary:hover{box-shadow:0 0 30px rgba(63,169,245,.45);transform:translateY(-2px);}
 .btn-ghost{color:var(--ink-70);}
@@ -152,7 +205,7 @@ nav.scrolled{background:rgba(5,8,22,.72);backdrop-filter:blur(14px);border-botto
 @keyframes scrollline{0%{top:-40%;}100%{top:100%;}}
 
 /* ---------- HERO PHOTO / SCENE ---------- */
-.photo-stage{position:relative;justify-self:end;width:100%;max-width:460px;aspect-ratio:3/4;}
+.photo-stage{position:relative;justify-self:end;width:100%;max-width:460px;aspect-ratio:3/4;overflow:hidden;}
 .scene{position:absolute;inset:-18% -30% -12% -18%;border-radius:28px;overflow:hidden;}
 .scene .monitor-glow{position:absolute;top:8%;right:6%;width:58%;height:42%;
   background:radial-gradient(circle, rgba(63,169,245,.55), rgba(42,78,124,.18) 55%, transparent 75%);
@@ -310,10 +363,32 @@ footer{padding:130px 0 60px;border-top:1px solid var(--ink-08);}
   font-family:var(--mono);font-size:11.5px;flex-wrap:wrap;gap:10px;letter-spacing:.5px;}
 
 @media (max-width:640px){
-  .wrap{padding:0 22px;}
-  section{padding:100px 0;}
+  .wrap{padding:0 20px;}
+  section{padding:90px 0;}
   .navlinks,.nav-social{display:none;}
-  .nav-toggle{display:flex;}
+  .nav-toggle{display:flex;flex-shrink:0;}
+  .brand{font-size:12.5px;letter-spacing:1px;}
+  .hero-name{letter-spacing:-1px;}
+  .hero-actions{flex-direction:column;align-items:stretch;}
+  .hero-actions .btn{justify-content:center;width:100%;}
+  .contact-links{flex-direction:column;align-items:stretch;}
+  .contact-links .btn{justify-content:center;width:100%;text-align:center;}
+  .about-meta{gap:24px;}
+  .stat-strip{grid-template-columns:repeat(2,1fr);}
+  .tech-grid{grid-template-columns:1fr;}
+  .foot-meta{flex-direction:column;align-items:flex-start;gap:6px;}
+}
+
+@media (max-width:420px){
+  .wrap{padding:0 18px;}
+  .hero-name{font-size:clamp(38px,12vw,58px);}
+  .eyebrow{font-size:11px;letter-spacing:2px;gap:8px;}
+  .stat-strip{grid-template-columns:1fr 1fr;}
+  .stat-card{padding:20px 18px;}
+  .about-content{padding:52px 20px;}
+  .about-meta{flex-direction:column;gap:18px;}
+  .contact-title{font-size:clamp(24px,7vw,34px);}
+  .brand{font-size:11.5px;}
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -324,6 +399,8 @@ footer{padding:130px 0 60px;border-top:1px solid var(--ink-08);}
 </style>
 </head>
 <body>
+
+<div class="progress-bar" id="progressBar"></div>
 
 <div class="ambient">
   <div class="base"></div>
@@ -409,6 +486,10 @@ footer{padding:130px 0 60px;border-top:1px solid var(--ink-08);}
       <div class="hero-actions reveal">
         <a class="btn btn-primary" href="#resume" data-i18n="hero.btnResume">Resume</a>
         <a class="btn btn-ghost" href="#projetos" data-i18n="hero.btnPortfolio">Portfolio</a>
+        <a class="btn btn-ghost" href="assets/Camilly_Pinheiro_CV.pdf" download>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          <span data-i18n="hero.btnDownload">Baixar CV</span>
+        </a>
       </div>
     </div>
 
@@ -456,9 +537,15 @@ footer{padding:130px 0 60px;border-top:1px solid var(--ink-08);}
 
 <section id="resume">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="kicker" data-i18n="resume.kicker">02 / Resume</div>
-      <div class="section-title" data-i18n="resume.title">Organizada como uma arquitetura de dados.</div>
+    <div class="section-head reveal" style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+      <div>
+        <div class="kicker" data-i18n="resume.kicker">02 / Resume</div>
+        <div class="section-title" data-i18n="resume.title">Organizada como uma arquitetura de dados.</div>
+      </div>
+      <a class="btn btn-primary" href="assets/Camilly_Pinheiro_CV.pdf" download style="flex-shrink:0;">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        <span data-i18n="resume.btnDownload">Baixar PDF</span>
+      </a>
     </div>
 
     <div class="stat-strip reveal">
@@ -625,7 +712,14 @@ footer{padding:130px 0 60px;border-top:1px solid var(--ink-08);}
     <div class="contact-title reveal" data-i18n="footer.title">Pronta para transformar dados brutos em decisões confiáveis.</div>
     <div class="contact-links reveal">
       <a class="btn btn-primary" href="mailto:camilly2victoria@gmail.com">camilly2victoria@gmail.com</a>
-      <a class="btn btn-ghost" href="tel:+5591983530368">+55 (91) 9 8353-0368</a>
+      <button type="button" class="btn btn-ghost copy-email" id="copyEmailBtn" data-email="camilly2victoria@gmail.com" aria-label="Copiar e-mail">
+        <span class="copy-icon" id="copyIcon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </span>
+        <span data-i18n="footer.btnCopy">Copiar e-mail</span>
+        <span class="copy-toast" id="copyToast" data-i18n="footer.copied">Copiado!</span>
+      </button>
+      <a class="btn btn-ghost" href="https://wa.me/91983530368">+55 (91) 9 8353-0368</a>
       <a class="btn btn-ghost" href="https://github.com/CamyVick/Camilly-Pinheiro" target="_blank" rel="noopener">GitHub ↗</a>
       <a class="btn btn-ghost" href="https://linkedin.com/in/camilly-pinheiro-dados" target="_blank" rel="noopener">LinkedIn ↗</a>
     </div>
@@ -635,6 +729,10 @@ footer{padding:130px 0 60px;border-top:1px solid var(--ink-08);}
     </div>
   </div>
 </footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
 
 <script>
   // ---------- I18N ----------
@@ -654,6 +752,7 @@ footer{padding:130px 0 60px;border-top:1px solid var(--ink-08);}
     "hero.lede":{pt:"Transformando dados em decisões através de pipelines escaláveis, automação e arquitetura moderna de dados.",en:"Turning data into decisions through scalable pipelines, automation, and modern data architecture.",es:"Transformando datos en decisiones mediante pipelines escalables, automatización y arquitectura de datos moderna.",fr:"Transformer les données en décisions grâce à des pipelines évolutifs, l'automatisation et une architecture de données moderne.",de:"Daten in Entscheidungen verwandeln – durch skalierbare Pipelines, Automatisierung und moderne Datenarchitektur."},
     "hero.btnResume":{pt:"Currículo",en:"Resume",es:"Currículo",fr:"CV",de:"Lebenslauf"},
     "hero.btnPortfolio":{pt:"Portfólio",en:"Portfolio",es:"Portafolio",fr:"Portfolio",de:"Portfolio"},
+    "hero.btnDownload":{pt:"Baixar CV",en:"Download CV",es:"Descargar CV",fr:"Télécharger le CV",de:"Lebenslauf herunterladen"},
     "hero.scroll":{pt:"Rolar",en:"Scroll",es:"Desplazar",fr:"Défiler",de:"Scrollen"},
 
     "about.kicker":{pt:"01 / Sobre",en:"01 / About",es:"01 / Acerca de",fr:"01 / À propos",de:"01 / Über mich"},
@@ -676,6 +775,7 @@ footer{padding:130px 0 60px;border-top:1px solid var(--ink-08);}
     "resume.stackTitle":{pt:"Stack técnica",en:"Technical stack",es:"Stack técnico",fr:"Stack technique",de:"Technischer Stack"},
     "resume.techTitle":{pt:"Tecnologias",en:"Technologies",es:"Tecnologías",fr:"Technologies",de:"Technologien"},
     "resume.expTitle":{pt:"Experiência profissional",en:"Professional experience",es:"Experiencia profesional",fr:"Expérience professionnelle",de:"Berufserfahrung"},
+    "resume.btnDownload":{pt:"Baixar PDF",en:"Download PDF",es:"Descargar PDF",fr:"Télécharger le PDF",de:"PDF herunterladen"},
 
     "resume.exp1.period":{pt:"OUT 2024 — ATUAL",en:"OCT 2024 — PRESENT",es:"OCT 2024 — ACTUAL",fr:"OCT 2024 — PRÉSENT",de:"OKT 2024 — HEUTE"},
     "resume.exp1.role":{pt:"Analista de MIS Sênior — Planejamento &amp; BI",en:"Senior MIS Analyst — Planning &amp; BI",es:"Analista de MIS Sénior — Planificación y BI",fr:"Analyste MIS Senior — Planification &amp; BI",de:"Senior MIS-Analystin — Planung &amp; BI"},
@@ -738,6 +838,8 @@ footer{padding:130px 0 60px;border-top:1px solid var(--ink-08);}
 
     "footer.kicker":{pt:"Contato",en:"Contact",es:"Contacto",fr:"Contact",de:"Kontakt"},
     "footer.title":{pt:"Pronta para transformar dados brutos em decisões confiáveis.",en:"Ready to turn raw data into reliable decisions.",es:"Lista para transformar datos brutos en decisiones confiables.",fr:"Prête à transformer des données brutes en décisions fiables.",de:"Bereit, Rohdaten in verlässliche Entscheidungen zu verwandeln."},
+    "footer.btnCopy":{pt:"Copiar e-mail",en:"Copy email",es:"Copiar correo",fr:"Copier l'e-mail",de:"E-Mail kopieren"},
+    "footer.copied":{pt:"Copiado!",en:"Copied!",es:"¡Copiado!",fr:"Copié !",de:"Kopiert!"},
     "footer.remote":{pt:"Home Office · Remoto",en:"Home Office · Remote",es:"Home Office · Remoto",fr:"Télétravail · À distance",de:"Home-Office · Remote"},
     "footer.flow":{pt:"bronze → silver → gold → decisão",en:"bronze → silver → gold → decision",es:"bronze → silver → gold → decisión",fr:"bronze → silver → gold → décision",de:"bronze → silver → gold → Entscheidung"}
   };
@@ -792,6 +894,51 @@ footer{padding:130px 0 60px;border-top:1px solid var(--ink-08);}
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 40);
   }, {passive:true});
+
+  // ---------- READING PROGRESS BAR ----------
+  const progressBar = document.getElementById('progressBar');
+  function updateProgress(){
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress, {passive:true});
+  window.addEventListener('resize', updateProgress);
+  updateProgress();
+
+  // ---------- BACK TO TOP ----------
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('show', window.scrollY > 500);
+  }, {passive:true});
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // ---------- COPY EMAIL ----------
+  const copyEmailBtn = document.getElementById('copyEmailBtn');
+  if(copyEmailBtn){
+    copyEmailBtn.addEventListener('click', async () => {
+      const email = copyEmailBtn.dataset.email;
+      const toast = document.getElementById('copyToast');
+      try{
+        await navigator.clipboard.writeText(email);
+      }catch(err){
+        const ta = document.createElement('textarea');
+        ta.value = email;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+      toast.classList.add('show');
+      clearTimeout(copyEmailBtn._toastTimer);
+      copyEmailBtn._toastTimer = setTimeout(() => toast.classList.remove('show'), 1800);
+    });
+  }
 
   // mobile menu
   const navToggle = document.getElementById('navToggle');

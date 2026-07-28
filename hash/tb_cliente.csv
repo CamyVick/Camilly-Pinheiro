@@ -1,0 +1,101 @@
+﻿id;nome;email;senha;telefone;ativo;criado_em
+1;Bento da Rocha;vcastro@example.net;l&4ZStq$sRW0;83 97131-3384;True;2024-10-16 17:16:53
+2;Arthur Gabriel Barros;casa-grandevinicius@example.com;_DhOceek%G3e;+55 33 94795-8363;False;2024-08-27 09:44:28
+3;Davi Luiz da Rocha;kduarte@example.com;ak4ghIvo)b(1;79 99288-3355;True;2025-03-02 04:39:51
+4;Maria Cecília Carvalho;vianaluiz-gustavo@example.org;o98OMuZA#kG@;53 93357-5579;True;2024-09-07 21:52:03
+5;Esther Sales;cavalcantilucca@example.org;$&)9fEH#SrSm;+55 18 90098-8225;False;2024-08-13 20:24:27
+6;Dr. Davi Montenegro;qborges@example.net;yO6)9snnMe3G;66 91902-9397;False;2025-02-13 00:18:49
+7;Bryan da Cruz;rpereira@example.com;@+^0Gr$iHLKy;+55 85 95417-7645;False;2026-03-19 00:57:45
+8;Joana Siqueira;hadassavasconcelos@example.net;pjo#7qBiK$6U;+55 79 91215-3222;True;2025-01-08 08:17:25
+9;Ana Lívia Lopes;albuquerqueana-carolina@example.com;r+s*_ToXmG!8;+55 11 93626-9391;True;2025-02-17 09:32:08
+10;João Lucas Barros;wnunes@example.net;&^XGa(LsY42L;24 99539-9787;True;2024-08-16 21:51:01
+11;Maria Isis Leão;maria-flor88@example.org;$tQWNiCJJ9yt;24 93461-2122;True;2026-04-21 07:08:16
+12;Cauê Barros;ndas-neves@example.net;C$3uwBY15i(J;+55 37 91336-3241;False;2025-12-14 10:23:53
+13;Davi Miguel Caldeira;aurorapeixoto@example.org;$75s4Jcp5*lT;+55 96 97319-0788;True;2025-04-15 04:29:50
+14;Dante Costa;manuella31@example.net;3(8EGW&pogTV;73 99005-9175;True;2026-05-06 20:40:24
+15;Fernanda Porto;borgesyasmin@example.com;%S0gp54Xq!*S;+55 67 95486-6702;False;2024-09-04 12:21:30
+16;Thiago Cardoso;ybarbosa@example.net;(YZGC!dt8aI1;28 96076-1666;False;2024-10-09 11:41:33
+17;Diego Montenegro;lmacedo@example.com;)^@YTy)xzI0E;+55 67 96660-4923;True;2024-11-19 23:49:35
+18;Clara Nascimento;melissaalbuquerque@example.net;LM$42Pz0q_R3;+55 61 95162-1113;False;2025-10-29 14:29:30
+19;Srta. Nina da Rocha;ubarbosa@example.net;of9W$_VQ2#_d;67 91705-6640;False;2026-04-20 21:56:00
+20;Sra. Ana Luiza Moura;davi-lucasviana@example.com;@F4xqy@UW(Px;+55 73 99025-0004;True;2025-12-31 14:14:22
+21;Gabriel da Paz;estercorreia@example.com;(x0J1Pj8F#N0;+55 66 96275-0649;True;2025-07-15 03:48:55
+22;Maria Liz Cavalcante;otavio57@example.net;hg^l86RzyNs&;+55 75 98219-8241;False;2024-12-22 03:46:55
+23;Júlia Silveira;das-nevesdante@example.com;Gx8FDPhMDf*9;46 98196-9847;True;2025-05-16 16:29:26
+24;Dr. José Miguel Moraes;luizada-rosa@example.com;*(LFKOlYZt31;+55 64 99757-1038;False;2025-10-17 10:20:50
+25;José Pedro Mendes;ravi-lucca50@example.net;0v4i#twaZ@DF;81 92372-7063;True;2024-10-07 23:51:09
+26;Ayla das Neves;pedro-henrique99@example.com;m+3SrBl^QAi@;51 93961-8401;False;2024-10-05 06:35:32
+27;Clarice da Mota;anafernandes@example.org;he2@WmUFC$ZX;97 92572-3635;True;2025-07-18 19:24:06
+28;Luiz Felipe Campos;jcastro@example.net;^6hYPjsc^HIu;67 93624-3148;True;2025-02-20 19:02:08
+29;Matheus da Paz;jcavalcante@example.com;&$y+tk@lM5nD;+55 45 97960-9974;True;2026-07-03 10:44:06
+30;Srta. Luna Nunes;joaquim75@example.org;!H^GZtwYuXu0;+55 84 97732-1851;False;2026-03-04 15:33:36
+31;Maria Clara Aragão;apolloaparecida@example.com;)W&c5cJnpD$u;+55 85 93582-7759;True;2025-01-25 02:46:49
+32;Beatriz Porto;novaesisis@example.org;c&()wbss0dRU;+55 62 95026-8015;True;2025-05-31 04:55:08
+33;Ravi Souza;ayla82@example.com;Ud3VRwte)98H;75 94235-3171;True;2025-11-22 20:03:38
+34;Thales Melo;gdias@example.com;+8XD2MfpHjgH;+55 84 92347-2931;True;2026-02-19 18:29:03
+35;Arthur Gabriel Cassiano;otto66@example.com;)G3FlGoUWKqs;24 90963-7631;False;2024-08-21 16:19:28
+36;Gabriela Ribeiro;vda-cunha@example.net;(3)qRSvCPy(O;62 95472-0279;True;2026-05-14 02:53:01
+37;Diogo Nascimento;azevedomaria-liz@example.com;7LL)(NSk62cC;+55 88 94074-6075;False;2025-12-10 02:58:01
+38;Alexandre Lima;cardosoantonella@example.org;@We3vRwsc7n9;14 97878-2983;True;2026-01-06 11:12:01
+39;Srta. Lavínia Rezende;henry-gabrielcassiano@example.net;u@$7fOru%C)&;95 92219-5916;False;2024-09-22 14:55:19
+40;Théo da Conceição;raquel98@example.org;&a9cT0(v3^KU;+55 19 94944-0856;False;2025-12-27 20:41:32
+41;Agatha Costela;elisa16@example.com;^20#YitDXya1;+55 65 90328-4805;False;2024-11-22 20:45:57
+42;Srta. Aurora Andrade;bento70@example.org;#dD)FcdaR1%+;49 93509-5717;False;2024-08-14 01:27:39
+43;Mariah Viana;maite92@example.org;C)TeHgWj^71M;98 98483-4518;True;2026-04-03 23:34:23
+44;Ana Clara Martins;melissaaragao@example.net;V%79vkabtYcN;+55 74 95185-0699;True;2025-05-24 17:21:34
+45;Anthony Gabriel Costa;davi-luiz12@example.com;Ye3VAzsz^9XW;+55 87 96155-2335;True;2024-12-13 16:57:45
+46;Giovanna Rios;gnunes@example.net;hqDhQ87kp^0T;+55 49 92111-9021;True;2024-09-21 15:57:01
+47;Rebeca da Costa;randrade@example.net;*H9Nwyrzz2VB;27 97959-7287;True;2025-06-05 17:11:06
+48;Dr. Renan Abreu;lmendes@example.net;)1AxIc$5!4Ra;+55 19 93194-9213;True;2026-02-23 03:41:22
+49;Mariana Nascimento;azevedoenzo@example.net;#QBoVuXij2a^;+55 46 96075-1846;False;2026-02-16 18:56:17
+50;Maitê Abreu;oliviaabreu@example.com;*GNa^zAaO@6O;67 97576-2902;True;2026-07-13 10:28:04
+51;Gael Caldeira;hsiqueira@example.org;sQxDL@Gz^AO9;+55 71 91357-2928;True;2025-11-25 03:57:13
+52;Bianca Peixoto;xcamargo@example.org;%R83Tc)opS1E;+55 11 92303-7439;True;2026-01-16 00:09:41
+53;Anna Liz Sousa;mduarte@example.com;P6%EAOsQ!boi;45 97256-1886;False;2024-08-22 15:47:20
+54;Pietra Cassiano;luigi37@example.com;w!bN#a!n^9QU;+55 54 95799-0542;True;2025-01-04 03:03:31
+55;Nathan Casa Grande;ribeiromarina@example.org;90E+fB#8a#Eh;89 98929-7885;False;2024-09-03 12:22:37
+56;Sr. Vinícius Albuquerque;siqueirasara@example.com;I9WZcCGr(GU9;37 95899-3342;True;2026-05-30 23:31:49
+57;Valentim Câmara;jrocha@example.com;+3(zSNZN0k1k;74 95664-8598;True;2025-06-09 21:24:09
+58;Sra. Maria Luiza Aragão;jose-miguelduarte@example.org;g3!BoTfew+1D;14 98440-7368;False;2025-04-09 20:24:04
+59;Sr. Arthur Miguel Marques;yasminnovaes@example.org;!8w5vG*($5lP;95 90371-1462;True;2024-11-17 22:50:57
+60;Dr. Theodoro Ferreira;calebda-mata@example.com;^m(Zv^Mz4!qQ;+55 85 93439-3456;True;2025-12-19 18:38:23
+61;Sofia Araújo;cunhagabriel@example.com;_fyTxrFnMn2X;+55 13 91849-7022;True;2024-11-23 01:19:59
+62;Rhavi das Neves;anamoreira@example.org;U3!HGhl@+Vlj;+55 85 98187-1068;False;2025-12-26 18:06:55
+63;Augusto Lopes;ana-beatriz44@example.org;kBZ)CgRq2QeI;+55 82 90585-8133;False;2025-08-02 20:22:50
+64;Esther Cardoso;qfogaca@example.com;*bdsyPYx!8T&;+55 14 98976-4552;True;2025-06-15 08:07:50
+65;Sra. Eduarda Marques;rfreitas@example.org;@LlWAend#m7o;32 98194-3527;False;2026-05-29 01:10:22
+66;Sr. Dante Garcia;gomesarthur-miguel@example.org;9(qOLZR40ei6;+55 14 91471-9669;True;2025-04-21 14:59:25
+67;Srta. Bárbara Porto;uda-rocha@example.net;U5B#qH^Luh6*;61 93107-3161;False;2026-04-05 19:48:36
+68;Anthony Gabriel Pacheco;mariana10@example.com;*py9G53w!2Uz;+55 47 91440-3630;False;2025-11-27 12:05:51
+69;Luiz Otávio Lopes;cpastor@example.net;$jYRChQv@9Qp;+55 33 90535-0753;True;2025-02-22 05:22:54
+70;Nicolas Brito;maysanovais@example.com;JmD(eiatx%3Z;87 94644-4450;True;2025-07-31 23:13:57
+71;Sr. Caleb Montenegro;silvaheitor@example.org;iqZJRslME5I+;+55 27 99595-5748;False;2024-11-24 10:54:50
+72;Sabrina Silva;ffarias@example.org;^W1!Z0rz@CO1;+55 31 98168-2048;False;2025-12-20 04:02:33
+73;Melina Pacheco;cfarias@example.net;0OZF26Svj@9d;+55 21 95376-0611;True;2025-04-16 22:39:57
+74;Maria Luísa Abreu;luccada-mata@example.com;WL_f8Rdd_#R6;99 90883-7178;False;2026-03-11 05:57:49
+75;Clara Leão;dmoraes@example.net;BacX3P2c!3H0;51 95248-2618;False;2024-11-07 20:29:30
+76;Isadora Camargo;vianastephany@example.com;NXwRR+#m!7Ij;43 97523-0757;False;2026-03-24 14:49:13
+77;Sra. Maria Isis Alves;liviacostela@example.net;_@d33w+EkNkT;28 90110-8617;True;2026-03-29 21:57:52
+78;Raul Moura;henrymonteiro@example.org;$Hu9&On)JE1i;83 99730-1611;True;2025-05-18 23:28:37
+79;Marcela Aparecida;maria-sophia25@example.org;#3Ajou+NmO_$;38 92563-2315;True;2024-09-25 13:18:31
+80;Catarina Carvalho;limajoao@example.net;db(ZZ6hg(9iv;+55 86 93244-4155;False;2025-11-24 13:46:43
+81;Paulo Melo;saralopes@example.net;!pN4UZfu+dCs;+55 94 90151-5296;False;2025-08-15 14:26:11
+82;Maitê Almeida;arthur-miguel43@example.net;^uqVyyJkL^4r;+55 62 90463-2019;True;2026-03-01 21:26:17
+83;Ana Beatriz Fogaça;luiz-fernando15@example.com;M*iIPBv7CLk7;+55 48 91141-7870;False;2025-10-05 11:17:24
+84;Ana Liz Almeida;eazevedo@example.com;W^6WvfPndF3V;55 96047-6526;False;2025-07-21 17:43:24
+85;João Vitor Gonçalves;falmeida@example.net;nfUQo3jxF2%^;12 99519-5110;False;2026-02-07 18:20:14
+86;Maria Fernanda Caldeira;pedro-lucas19@example.net;C528RuLtk1@N;+55 37 97955-2747;False;2025-12-09 11:48:10
+87;Melina da Rocha;casa-grandeheloisa@example.org;&15GTak8SZ24;32 95145-9464;True;2025-01-17 17:30:51
+88;Sra. Júlia da Cunha;andradeleandro@example.net;1C2YjlwZnC6*;28 95194-6803;True;2025-11-09 14:45:39
+89;João Aparecida;moreiraluna@example.com;N*AVy1Wy%l#0;+55 16 92107-8467;True;2025-07-21 12:41:12
+90;Dr. João Vitor Porto;apollo55@example.com;4WF55MXo5!n9;+55 48 91825-0388;True;2024-09-23 12:42:39
+91;Sr. Heitor Casa Grande;kcavalcanti@example.com;^kS2bzLtzYtY;+55 65 90843-5085;False;2026-01-04 10:11:26
+92;Heloisa Cirino;vasconcelosagatha@example.com;2CoLjuYh%nYT;41 95237-3195;True;2026-04-07 17:08:36
+93;Gabriel Santos;emanuellasampaio@example.net;bpC02bfD&g2t;+55 21 90747-6101;False;2025-05-05 15:02:22
+94;Sofia Duarte;juangoncalves@example.net;k_Wzsx$&B9$z;84 92802-8850;True;2026-03-28 01:49:58
+95;João Pires;qcasa-grande@example.net;_26Dvi4l1@va;48 93669-7305;False;2025-02-01 16:08:02
+96;Melina Garcia;costelaayla@example.com;^wguhBxe)HL2;+55 28 90516-0740;False;2025-06-16 00:32:53
+97;Apollo Silveira;augustocarvalho@example.org;%3WHB0mp2mC@;89 97003-9628;True;2024-12-28 12:09:45
+98;Maria Sophia Machado;das-nevesbryan@example.org;Wu%q_NmgW0X4;91 93704-0220;True;2026-01-14 07:56:18
+99;Sr. Matteo Cassiano;aylabarbosa@example.net;)Gm7ZH1j(K1I;37 92183-5620;False;2025-03-10 21:23:55
+100;Marcelo Correia;leaoheloisa@example.org;_T1MLuNrJVHh;96 95564-8515;False;2025-07-03 09:01:51
